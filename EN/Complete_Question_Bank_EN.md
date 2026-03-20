@@ -8326,6 +8326,270 @@
 - What role do leadership, ownership, and team culture play in the SDLC?
 - What should a “healthy” SDLC look like in a strong engineering organization?
 
+#### 3.9.9 Using AI in Development
+- Do you use AI in your day-to-day development work?
+- Which AI tools for development do you know?
+- In which tasks does AI help you the most?
+- In which tasks does AI help you the least?
+- Which development tasks would you not trust to AI at all?
+- What do you understand by AI-assisted development?
+- How is using AI in development different from simply searching documentation and forums?
+- How do you determine whether AI actually speeds up the work rather than just creating an illusion of speed?
+- In your experience, where is AI more useful: code generation, code explanation, bug root cause analysis, tests, documentation, or refactoring?
+- Which typical AI usage scenarios by developers do you consider the most practical?
+- For which tasks can a junior developer use AI safely?
+- For which tasks can a middle-level developer use AI effectively?
+- For which tasks should a senior developer use AI consciously and with reservations?
+- In which cases is AI especially useful for a backend developer?
+- In which cases is AI especially useful for a frontend developer?
+- In which cases is AI especially useful for a DevOps engineer?
+- In which cases is AI especially useful for a QA engineer?
+- In which cases is AI especially useful for a manager or tech lead?
+- How does AI help with onboarding to a new project?
+- Can AI help you understand legacy code faster? How exactly?
+- Can AI be used to explain an unfamiliar stack or framework?
+- How useful is AI for learning a new technology?
+- How useful is AI for interview preparation?
+- How useful is AI for building pet projects?
+- What is the main benefit of AI for a strong engineer?
+- What is the main danger of AI for a weak engineer?
+- How does AI affect a developer’s productivity?
+- How does AI affect the quality of decisions?
+- How does AI affect engineering thinking?
+- How does AI affect learning speed?
+- How does AI affect the ability to investigate a problem independently?
+- What are the signs that a person is too dependent on AI at work?
+- What are the signs that a person uses AI in a mature and professional way?
+- How can you tell that an AI answer cannot be trusted?
+- What typical mistakes does AI make when generating code?
+- What typical mistakes does AI make when explaining architecture?
+- What typical mistakes does AI make when working with APIs and libraries?
+- What typical mistakes does AI make when generating SQL?
+- What typical mistakes does AI make when generating tests?
+- What typical mistakes does AI make when generating infrastructure configurations?
+- What is an AI hallucination in the context of development?
+- How do you recognize a hallucination in a technical answer?
+- Why can AI confidently suggest an incorrect solution?
+- Why can AI suggest an outdated API or non-existent parameters?
+- How do you verify code suggested by AI?
+- How do you verify architectural recommendations suggested by AI?
+- How do you verify that AI has not invented non-existent documentation, a flag, a method, or a library?
+- Which rules for reviewing AI-generated code do you consider mandatory?
+- Can you accept code from AI without understanding how it works?
+- What would you do if AI gave you code that “works,” but you do not understand why?
+- What is the minimum level of understanding a developer should have before taking AI-generated code into a project?
+- When working with AI, what matters more: being able to write a good prompt or being able to critically evaluate the answer?
+- What matters more: getting a fast answer from AI or formulating the task correctly?
+- How should you formulate a task for AI to get a more useful answer?
+- What are the characteristics of a good prompt for a technical task?
+- What are the characteristics of a bad prompt?
+- How does context affect the quality of an AI answer?
+- Why does an overly general prompt often lead to bad code?
+- Why can an overly narrow prompt also be a problem?
+- How do you provide project context to AI without overloading it with unnecessary details?
+- How would you ask AI to explain complex code so that the answer is useful for a junior developer?
+- How would you ask AI to suggest a refactor without sacrificing readability?
+- How would you ask AI to help with debugging?
+- How would you ask AI to generate tests?
+- How would you ask AI to compare two architectural alternatives?
+- How would you ask AI to help with migration between library versions?
+- How would you ask AI to review an API design idea?
+- How would you ask AI to help with SQL optimization?
+- How would you ask AI to help with code review?
+- How would you ask AI to help with documentation?
+- How would you ask AI to help draft an implementation plan for a task?
+- Where is AI especially useful during refactoring?
+- Where is AI especially dangerous during refactoring?
+- Can AI be used to generate unit tests?
+- What are the pros and cons of using AI to generate unit tests?
+- Can AI be used to generate integration tests?
+- Why can AI-generated tests create a false sense of reliability?
+- Can AI help improve test coverage?
+- Can AI help discover edge cases?
+- Can AI help find race conditions or concurrency bugs?
+- Can AI help find security vulnerabilities?
+- Can AI help find performance bottlenecks?
+- When does AI really help with debugging?
+- When does AI just create noise and get in the way of debugging?
+- In which cases is AI useful for root cause analysis?
+- Can AI be used to read logs and identify patterns?
+- Can AI be used to analyze incidents?
+- Can AI be used to write postmortems?
+- Can AI be used to generate runbooks?
+- Can AI be used to analyze pull requests?
+- Can AI be useful in code review?
+- What can AI do well in code review?
+- What does AI do poorly in code review?
+- Can AI help find code smells?
+- Can AI help find readability and maintainability issues?
+- Can AI help detect violations of architectural boundaries?
+- Can AI help find duplicated code?
+- Can AI help find potential null/edge-case errors?
+- Can AI help assess the quality of naming in code?
+- Can AI be used to generate documentation?
+- Which types of documentation does AI generate best?
+- Where does AI-generated documentation usually turn out weak or dangerous?
+- Can AI be used to generate a README?
+- Can AI be used to generate API docs?
+- Can AI be used to generate release notes?
+- Can AI be used to generate RFCs or ADRs?
+- How do you avoid a situation where AI generates documentation that looks good but is inaccurate?
+- Can AI be used to explain architecture to new team members?
+- Can AI help with task decomposition?
+- Can AI help with task estimation?
+- Why can AI-based task estimation be misleading?
+- Can AI help write acceptance criteria?
+- Can AI help prepare a technical design?
+- Can AI help compare libraries, frameworks, and technologies?
+- When are AI-generated technology comparisons especially useful?
+- When are AI-generated technology comparisons especially dangerous?
+- Can AI help choose between two architectural approaches?
+- Why can a decision made “based on AI advice” be dangerous if you do not know the system context?
+- What is the risk of using AI for architectural decisions?
+- Can AI help with API design?
+- Can AI help design a database schema?
+- Can AI help come up with a migration strategy?
+- Can AI help with rate limiting, retries, circuit breakers, caching, and observability?
+- Why can AI suggest the right pattern in the wrong context?
+- How can you use AI in backend development without losing quality?
+- How can you use AI in frontend development without losing quality?
+- How can you use AI in DevOps without risking breaking the infrastructure?
+- How can you use AI in QA without ending up with useless tests?
+- How can you use AI to generate SQL?
+- What problems are common in AI-generated SQL?
+- What problems are common in AI-generated regexes?
+- What problems are common in AI-generated Dockerfiles, Terraform, and Kubernetes manifests?
+- Why is it especially dangerous to blindly take shell commands or infrastructure configs from AI?
+- Can AI be used to write a CI/CD pipeline?
+- Which checks would you perform before accepting a CI/CD config from AI?
+- Can AI be used to write database migrations?
+- What are the risks of AI-generated migrations?
+- Can AI be used to write security-sensitive code?
+- Which parts of security-sensitive code are especially dangerous to delegate to AI?
+- Can AI be used for authentication, authorization, and cryptography work?
+- Why is AI especially dangerous in cryptography and security?
+- What security rules should a team have for using AI?
+- Can company source code be sent to a public AI service?
+- Can fragments containing secrets, tokens, or API keys be sent to AI?
+- Can production logs be sent to AI?
+- Can users’ personal data be sent to AI?
+- What risks arise when sending code or data to external LLM services?
+- What is data leakage in the context of developers using AI?
+- Which classes of data must not be sent to external AI tools?
+- What should a company policy on AI usage look like?
+- Which AI usage rules should be mandatory in an engineering team?
+- Should a developer explicitly indicate that part of a solution was generated by AI?
+- Should AI-generated code be labeled in a pull request?
+- Should code review treat AI-generated code more strictly than ordinary code?
+- How would you organize the review process if developers actively use AI?
+- How does AI change the requirements for code review?
+- How does AI change the requirements for testing?
+- How does AI change the requirements for documentation?
+- How does AI change the requirements for junior developers’ skills?
+- How does AI change the requirements for middle-level developers’ skills?
+- How does AI change the requirements for senior developers’ skills?
+- Which skills become more important in the era of AI-assisted development?
+- Which skills become less valuable?
+- Does AI make algorithmic fundamentals less important? Why?
+- Does AI make knowledge of basic programming concepts less important? Why?
+- Does AI make knowledge of architecture less important? Why?
+- Why does the spread of AI make critical thinking more important, not less?
+- Can a person appear stronger because of AI than they really are?
+- In an interview, how can you distinguish someone who truly understands the code from someone who only knows how to use AI?
+- Which interview questions help reveal how consciously a candidate uses AI?
+- Is it worth asking a candidate whether they use AI at work at all?
+- Is active AI usage a plus or a minus for a candidate?
+- How would you evaluate a candidate who works quickly but relies heavily on AI?
+- How would you evaluate a candidate who hardly uses AI on principle?
+- Should AI be banned for junior developers?
+- Should AI use be limited during onboarding?
+- When does AI help juniors grow faster?
+- When does AI prevent juniors from actually learning?
+- Can AI reinforce bad engineering habits?
+- Which bad engineering habits does AI make especially easy to reinforce?
+- Which good engineering habits can AI strengthen?
+- Can AI help with learning code review, debugging, and design thinking?
+- How should juniors be taught to use AI properly?
+- How should middle-level developers be taught to use AI productively?
+- How should seniors be taught to use AI not as autocomplete, but as a thinking amplifier?
+- What is an AI copilot in development?
+- How is a copilot different from a regular chat-based assistant?
+- What are the advantages of AI-based autocomplete?
+- What are the disadvantages of AI-based autocomplete?
+- How does the presence of copilots affect the quality of small routine changes?
+- How does the presence of copilots affect complex architectural changes?
+- What is an AI agent in the context of development?
+- How is an AI agent different from a regular LLM chatbot?
+- Which agentic workflows do you know?
+- In which tasks are AI agents genuinely useful?
+- In which tasks are AI agents still overrated?
+- Can an AI agent be trusted to make changes in a repository without human review?
+- Which guardrails are needed for AI agents in an engineering environment?
+- What are the risks of AI agents that can read the codebase, run commands, and change files?
+- What are the risks of AI agents that can open PRs, run CI, and modify infrastructure?
+- Where should the “human in the loop” be when using AI agents?
+- Which levels of autonomy for AI agents in development do you consider acceptable?
+- Can an AI agent be trusted with large-scale refactoring?
+- Can an AI agent be trusted to automatically fix flaky tests?
+- Can an AI agent be trusted with bug and incident triage?
+- Can an AI agent be trusted to generate changelogs, release notes, or postmortems?
+- How would you safely introduce AI agents into an engineering team?
+- Which processes need to be revisited if a team starts actively using AI agents?
+- How would you restrict AI agents’ access to code, secrets, production, and internal systems?
+- How can you tell that an AI agent is actually saving time rather than creating additional noise?
+- How should the impact of using AI in development be measured?
+- Which metrics can be used to evaluate the usefulness of AI-assisted development?
+- Why are lines of code or the number of closed tasks not sufficient as the only indicator of AI impact?
+- How can you distinguish real productivity growth from just an increase in the number of raw changes?
+- How does AI affect lead time?
+- How does AI affect defect rate?
+- How does AI affect change failure rate?
+- How does AI affect onboarding speed?
+- How does AI affect a developer’s cognitive load?
+- How does AI affect bus factor?
+- Can AI reduce bus factor by accelerating understanding of the system?
+- Can AI, on the contrary, worsen bus factor if no one understands the generated solutions?
+- How does AI affect technical debt?
+- Can AI accelerate the accumulation of technical debt?
+- Can AI help clean up technical debt?
+- In which cases is AI useful for large-scale refactoring, unification, and cleanup?
+- In which cases is AI dangerous for large-scale refactoring?
+- How does AI affect coding style in a team?
+- Can AI reduce code consistency?
+- Can AI, on the contrary, improve code consistency?
+- How can a team agree on acceptable AI usage?
+- Which AI usage rules should be documented in the engineering handbook?
+- Does the team need separate recommendations for prompt engineering?
+- Does the team need separate recommendations for reviewing AI-generated code?
+- Does the team need separate recommendations for data privacy when using AI?
+- Should the use of public AI services in commercial development be restricted?
+- When is it better to use local LLMs or corporate deployments?
+- What are the pros and cons of local LLMs compared to cloud-based ones?
+- When is corporate AI tooling preferable to public LLMs?
+- How would you explain to a manager that AI does not replace engineering expertise?
+- How would you explain to a manager where AI genuinely speeds up the team and where it is just marketing?
+- How would you explain to a junior developer that AI is an assistant, not a source of truth?
+- How would you explain to a senior developer why completely ignoring AI can also be a mistake?
+- Which anti-patterns of AI use in development have you seen?
+- What is worse: not using AI at all, or using it without verification?
+- Which situations demonstrate engineering immaturity in AI usage?
+- Which situations demonstrate engineering maturity in AI usage?
+- Can AI be useful for architecture interviews?
+- Can AI be useful for preparing RFCs/ADRs?
+- Can AI be useful for analyzing trade-offs?
+- When does AI help broaden the range of solutions being considered?
+- When does AI push teams toward templated and mediocre solutions?
+- Can AI reduce an engineer’s creativity?
+- Can AI, on the contrary, enhance creativity by quickly exploring options?
+- How can you avoid a situation where the team starts making “average” decisions because AI suggests them?
+- How can you preserve engineering culture and quality of decisions while using AI widely?
+- How do you see the role of AI in development in the next 1–2 years?
+- How do you see the role of AI agents in engineering teams in the next 1–2 years?
+- Which skills should a developer build to remain a strong engineer as AI-assisted development grows?
+- What will distinguish a strong engineer in a world where everyone has AI?
+- Which questions about using AI in development should a strong candidate be ready to discuss in an interview?
+- If you were introducing an AI usage policy in a new engineering team from scratch, which 5 rules would you make mandatory?
+
 ### 3.10 Organization of IT Team Work
 
 #### 3.10.1 Team Roles and Areas of Responsibility

@@ -64,6 +64,7 @@
 #### 3.9.6 Technical Debt, Legacy, and Refactoring
 #### 3.9.7 Estimation, Planning, Risks, Release Management
 #### 3.9.8 SDLC: From Idea to Production
+#### 3.9.9 Using AI in Development
 ### 3.10 IT Team Work Organization
 #### 3.10.1 Team Roles and Areas of Responsibility
 #### 3.10.2 Decision-Making Processes
