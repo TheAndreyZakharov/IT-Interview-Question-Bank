@@ -343,13 +343,18 @@
 ### 14.6 Data visualization
 ### 14.7 Machine Learning: основы
 ### 14.8 Machine Learning: продвинутые темы
+#### 14.8.1 Линейная алгебра и математический анализ для ML
+#### 14.8.2 Фреймворки глубокого обучения и обучение моделей
+#### 14.8.3 LLM engineering, RAG и оценка генеративных систем
 ### 14.9 MLOps
 #### 14.9.1 Feature store и model registry
 #### 14.9.2 Monitoring, drift detection, A/B testing
+#### 14.9.3 Experiment tracking, model serving и ML-платформа
 ### 14.10 Product analytics и A/B testing
 ### 14.11 Data engineering
 #### 14.11.1 ETL / ELT
 #### 14.11.2 Airflow
+#### 14.11.3 Распределенная обработка данных и потоковые системы
 
 ## 15. Product / Project / Delivery Management
 ### 15.1 Product Manager

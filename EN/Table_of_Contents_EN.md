@@ -343,13 +343,18 @@
 ### 14.6 Data Visualization
 ### 14.7 Machine Learning: Fundamentals
 ### 14.8 Machine Learning: Advanced Topics
+#### 14.8.1 Linear Algebra and Calculus for ML
+#### 14.8.2 Deep Learning Frameworks and Model Training
+#### 14.8.3 LLM Engineering, RAG, and Generative-System Evaluation
 ### 14.9 MLOps
 #### 14.9.1 Feature Store and Model Registry
 #### 14.9.2 Monitoring, Drift Detection, A/B Testing
+#### 14.9.3 Experiment Tracking, Model Serving, and ML Platforms
 ### 14.10 Product Analytics and A/B Testing
 ### 14.11 Data Engineering
 #### 14.11.1 ETL / ELT
 #### 14.11.2 Airflow
+#### 14.11.3 Distributed Data Processing and Streaming Systems
 
 ## 15. Product / Project / Delivery Management
 ### 15.1 Product Manager
