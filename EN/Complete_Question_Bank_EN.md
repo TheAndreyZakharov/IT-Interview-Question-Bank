@@ -2891,7 +2891,7 @@
 - How do you compare floating-point numbers correctly?
 - Why should you not blindly compare two floats for equality?
 - What is base64?
-- Is it a numeral system or an encoding? What is the difference?
+- Is base64 a numeral system or an encoding? What is the difference?
 - Why are hex and base64 often used to represent binary data?
 - Why are colors in CSS often specified in hex format?
 - How is an IP address related to binary representation?
@@ -3067,7 +3067,7 @@
 - What does an interpreter do?
 - What does a JIT compiler do?
 - How do compiled languages differ from interpreted languages?
-- Why is this distinction not always strict?
+- Why is the distinction between compiled and interpreted languages not always strict?
 - What is bytecode?
 - What is a language virtual machine?
 - How does a Java program ultimately get executed on a CPU?
@@ -3176,7 +3176,7 @@
 - How does CPU architecture affect the ABI?
 - What is a calling convention?
 - How are function arguments passed: via stack or registers?
-- Why is this important when debugging and integrating with low-level code?
+- Why is a calling convention important when debugging and integrating with low-level code?
 - What does a language runtime do?
 - What can a runtime do besides just “running code”?
 - How does a garbage collector interact with memory and CPU?
@@ -3619,7 +3619,7 @@
 - Can you build a high-load system without a large number of threads?
 - Why does the “one thread per connection” model scale poorly?
 - What is the thread-per-request model?
-- What are its pros and cons?
+- What are the pros and cons of the thread-per-request model?
 - What is the worker pool model?
 - How does OS scheduling affect application latency?
 - How does OS scheduling affect throughput?
@@ -4089,7 +4089,7 @@
 - What does EOF mean when reading from a socket?
 - How does a process know that the other side of a TCP connection has closed the socket?
 - What is a half-close in TCP?
-- Is it possible to close only the write direction but continue reading?
+- Is it possible to close only the write direction of a TCP connection while continuing to read?
 - What is SIGPIPE?
 - Why can writing to a closed socket lead to a broken pipe error?
 - What is a system call?
@@ -6491,7 +6491,7 @@
 - What is Command?
 - Where is Command used in practice?
 - What is Chain of Responsibility?
-- When is this pattern convenient?
+- When is the Chain of Responsibility pattern convenient?
 - What is State?
 - How is State different from Strategy?
 - What is Mediator?
@@ -6603,7 +6603,7 @@
 - How is currying different from partial application?
 - When is currying useful in real code?
 - What is point-free style?
-- What are its pros and cons?
+- What are the pros and cons of point-free style?
 - What is lazy evaluation?
 - How is lazy evaluation different from eager evaluation?
 - When is lazy evaluation useful?
@@ -10725,7 +10725,7 @@
 - Can a class have multiple constructors?
 - What is constructor overloading?
 - What does the new keyword do?
-- What is this and what is it used for?
+- What is the Java `this` keyword, and what is it used for?
 - What is super and what is it used for?
 - What is the difference between this and super?
 - What are static fields and methods?
@@ -11973,7 +11973,7 @@
 - Which data is reasonable to publish in `/info`, and which is not?
 - How do you add build/version/git info to Actuator?
 - Why expose the application version through Actuator?
-- How does that help during rollback and incident investigation?
+- How does exposing the application version through Actuator help during rollback and incident investigation?
 - What are startup metrics and the startup endpoint?
 - How do you analyze Spring Boot application startup time?
 - What is ApplicationStartup in Spring Boot?
@@ -12217,7 +12217,7 @@
 - Why can the size of a jar/bootJar suddenly grow significantly?
 - How do you analyze the contents of the final artifact?
 - What is a layered jar / layered image in Spring Boot?
-- How does that help when building Docker images?
+- How do layered jars and layered images help when building Docker images?
 - What are buildpacks?
 - How does Spring Boot integrate with Paketo buildpacks?
 - How does building a Docker image via Dockerfile differ from buildpacks?
@@ -13960,7 +13960,7 @@
 - How do you semantically mark up a checkout form in an e-commerce site?
 - How do you mark up a form with multiple logical steps?
 - What is a multi-step form, and what UX risks does it have?
-- How is it better to build long forms: one large form or a split into steps?
+- What is a better way to build long forms: one large form or a split into steps?
 - What is optimistic UI in the context of form submission?
 - When is it acceptable to submit a form asynchronously without reloading the page?
 - What are the pros and cons of native HTML form submission compared to AJAX/fetch?
@@ -15170,7 +15170,7 @@
 - What is safer for an SPA: storing the token in memory, in a cookie, or in localStorage?
 - How do you safely refresh an access token in a browser application?
 - What is session fixation?
-- How can it manifest itself in a web application?
+- How can session fixation manifest itself in a web application?
 - What is session hijacking?
 - Which browser-side measures help reduce the risk of hijacking?
 - How does authentication in an SPA differ, in terms of attack surface, from server-side rendering?
@@ -15354,7 +15354,7 @@
 - Why does SSR not guarantee good interactivity?
 - How are SSR, hydration, and bundle size related?
 - What are partial hydration and island architecture?
-- How do they help performance?
+- How do partial hydration and island architecture help performance?
 - What is a bundle budget?
 - How can you control bundle size growth over time in a project?
 - Which tools help analyze bundle size?
@@ -16689,7 +16689,7 @@
 - How is an HOC different from render props?
 - When can an HOC still be useful today?
 - What are presentational and container components?
-- Is this separation still relevant in modern React?
+- Is the separation between presentational and container components still relevant in modern React?
 - What are dumb and smart components?
 - What is a headless component?
 - How is a headless component different from a regular UI component?
@@ -16856,7 +16856,7 @@
 - In what cases do libraries need useSyncExternalStore?
 - What is useInsertionEffect?
 - What is useInsertionEffect for?
-- Why is this Hook more relevant to authors of CSS-in-JS libraries?
+- Why is useInsertionEffect more relevant to authors of CSS-in-JS libraries?
 - What is useDebugValue?
 - Why is useDebugValue needed in custom Hooks?
 - What is the rendering model in React?
@@ -19292,7 +19292,7 @@
 - In what format are tokens usually stored?
 - How do you connect tokens from Figma with tokens in code?
 - What does single source of truth mean in the context of a design system?
-- Is it achievable in practice, or is it always a compromise?
+- Can a single source of truth be achieved in practice in a design system, or is it always a compromise?
 - How do you avoid design and code drifting out of sync?
 - What is a component in a design system?
 - How does a base component differ from a product-specific component?
@@ -19645,7 +19645,7 @@
 - How are landmarks, headings, and overall page navigation UX related?
 - Why is incorrect heading structure not only an accessibility problem but also a UX problem?
 - When is it better to use a button, and when a link?
-- Why does that matter for accessibility and for the user’s mental model?
+- Why does the choice between a button and a link matter for accessibility and the user’s mental model?
 - How does accessibility affect conversion rate and form completion rate?
 - Give an example of when improving accessibility really improved product metrics.
 - Give an example of when a design decision looked beautiful but worsened accessibility and UX.
@@ -20019,7 +20019,7 @@
 - What signs of good backend architecture do you know?
 - How do you know that a backend service is too tightly coupled to other parts of the system?
 - What are loose coupling and high cohesion on the backend?
-- Why is this important in server-side development?
+- Why are loose coupling and high cohesion important in server-side development?
 - What is modularity on the backend?
 - How do you design modules in a backend application?
 - Which module boundaries do you usually define?
@@ -20334,7 +20334,7 @@
 - How do you design an API for restoring a deleted resource?
 - How do you design actions that do not fit neatly into pure CRUD?
 - What should be done with endpoints like `/orders/{id}/cancel` or `/users/{id}/ban`?
-- Is that REST or RPC? Does it matter in practice?
+- Is an endpoint such as `/orders/{id}/cancel` REST or RPC, and does the distinction matter in practice?
 - What is your opinion on action endpoints?
 - When is an action endpoint better than trying to force an action into PATCH?
 - How do you design an API for state transitions?
@@ -21181,7 +21181,7 @@
 - Why can large integer values be problematic for JavaScript/JSON?
 - What is precision loss when working with JSON?
 - What is the difference between `null`, a missing field, and a field with a default value?
-- Why is this important in serialization?
+- Why is the distinction between null, a missing field, and a field with a default value important in serialization?
 - What is canonical form in JSON?
 - Why can comparing JSON objects be nontrivial?
 - Does the order of fields in JSON affect semantics?
@@ -22571,7 +22571,7 @@
 - What is a confidential client and a public client?
 - Why is an SPA usually considered a public client?
 - Can a client secret be stored in a browser?
-- Why not?
+- Why can’t a client secret be stored in a browser?
 - What is an access token in the context of OAuth 2.0?
 - What is a refresh token in OAuth 2.0?
 - What is an ID token in OIDC?
@@ -24848,10 +24848,10 @@
 - Which trade-offs between delivery speed and test quality do you consider reasonable?
 - What would you include in the definition of done for backend testing?
 - How do you build a testing strategy for a monolith?
-- How does it change for microservices?
-- How does it change for an event-driven system?
-- How does it change for a high-load system?
-- How does it change for a team of 2 people versus a team of 20?
+- How does a testing strategy change for microservices?
+- How does a testing strategy change for an event-driven system?
+- How does a testing strategy change for a high-load system?
+- How does a testing strategy change for a team of 2 versus a team of 20?
 
 #### 6.10.2 Testcontainers
 - What is Testcontainers?
@@ -25187,7 +25187,7 @@
 - How do you safely implement filters in an API?
 - What is command injection, with an example in a backend service?
 - Why are shell calls from an application dangerous?
-- How is it safer to invoke external processes?
+- What is a safer way to invoke external processes?
 - What is SSRF?
 - How can SSRF arise in a backend application?
 - Why are functions like “download file by URL,” “check image,” or “generate preview” often dangerous?
@@ -26703,7 +26703,7 @@
 - What is Subquery Scan?
 - What do `cost=...` values mean in an execution plan?
 - What do startup cost and total cost mean?
-- Are these milliseconds or abstract units?
+- Are startup cost and total cost measured in milliseconds or abstract units?
 - How does PostgreSQL calculate cost?
 - What affects the cost model in PostgreSQL?
 - What do `rows=...` values mean in a plan?
@@ -27331,7 +27331,7 @@
 - What is a secondary index in InnoDB?
 - How does a secondary index in InnoDB differ from a secondary index in other DBMSs?
 - Why does a secondary index in InnoDB store the primary key value?
-- How does that affect index size?
+- How does storing the primary key in an InnoDB secondary index affect index size?
 - Why does a long primary key make all secondary indexes heavier?
 - What is a composite index?
 - How does a composite index work?
@@ -27472,9 +27472,9 @@
 - When is MySQL more commonly chosen?
 - When is PostgreSQL more commonly chosen?
 - Which of these DBMSs is usually better suited for classic OLTP?
-- Which one is usually more flexible in terms of SQL capabilities?
+- Which of MySQL and PostgreSQL is usually more flexible in terms of SQL capabilities?
 - How do MySQL and PostgreSQL differ in how strictly they follow the SQL standard?
-- Which one usually provides richer capabilities for complex queries?
+- Which of MySQL and PostgreSQL usually provides richer capabilities for complex queries?
 - What differences are there in the transaction model of MySQL and PostgreSQL?
 - How does MVCC differ in InnoDB and MVCC in PostgreSQL?
 - Why can REPEATABLE READ behave differently in MySQL and PostgreSQL?
@@ -30397,7 +30397,7 @@
 - What are raw layer, refined layer, and serving layer?
 - Which data layers are usually выделated in a modern analytics platform?
 - What are bronze, silver, and gold layers?
-- How do they differ in data quality and readiness?
+- How do bronze, silver, and gold layers differ in data quality and readiness?
 - What is batch processing?
 - What is streaming / near-real-time ingestion?
 - When does the business truly need a near-real-time DWH?
@@ -33296,7 +33296,7 @@
 - What is BOLA / Broken Object Level Authorization?
 - What is Broken Function Level Authorization?
 - What is a mass assignment vulnerability?
-- How does it arise in REST/GraphQL applications?
+- How does a mass assignment vulnerability arise in REST/GraphQL applications?
 - How do you protect against mass assignment?
 - Why is it dangerous to blindly map the request body into an ORM entity?
 - What is SQL injection?
@@ -41093,7 +41093,7 @@
 - What is secure coding validation?
 - What is verification of security controls?
 - What are abuse cases and misuse cases?
-- How do they help in security testing?
+- How do abuse cases and misuse cases help in security testing?
 - What questions would you ask before starting security testing?
 - How do you determine what to test first?
 - How do you prioritize security testing by risk?
@@ -42890,7 +42890,7 @@
 - Can you have a durable write without immediately strong read consistency?
 - What is anti-entropy?
 - What is read repair?
-- How do they help with eventual consistency?
+- How do anti-entropy and read repair help with eventual consistency?
 - What limitations do they have?
 - What is a CRDT?
 - When are CRDTs useful?
@@ -45338,7 +45338,7 @@
 - Why can overly long chains of operations be inconvenient?
 - When should you split an analysis into intermediate DataFrames?
 - What is SettingWithCopyWarning?
-- Why does it occur?
+- Why does SettingWithCopyWarning occur?
 - How do you avoid it properly?
 - Why is it important to understand view vs copy in pandas?
 - Which operations in pandas are especially memory-expensive?
@@ -56132,9 +56132,9 @@
 - What should you do if the interviewer asks senior-level questions while you are applying for a junior/middle role?
 - How do you show potential if you do not yet have enough depth?
 - How do you answer the question “What happens when a user enters a URL in the browser?”?
-- Why is this a trap question about the breadth of your engineering fundamentals?
+- Why is the question “What happens when a user enters a URL in a browser?” a trap question about the breadth of engineering fundamentals?
 - How do you answer the question “What is JWT, and is it safe to use?”?
-- Why is this a trap question about understanding context rather than giving a textbook definition?
+- Why is the question “What is JWT, and is it safe to use?” a trap question about understanding context rather than giving a textbook definition?
 - How do you answer the question “What are microservices?” without reducing the answer to a buzzword?
 - How do you answer the question “What is the event loop?” in a way that shows understanding rather than a memorized definition?
 - How do you answer the question “What is caching, and where would you put it?” without sounding oversimplified?
@@ -56319,7 +56319,7 @@
 - How would you describe the main purpose of this position?
 - Why is this position open right now?
 - Is this a new role or a replacement?
-- How does this role impact the team and the product?
+- How does the role for which you are interviewing impact the team and the product?
 - What tasks will come in the first weeks after joining?
 - Which tasks do you consider the most important in the first 1–3 months?
 - What are your expectations for a new person during the probation period?
@@ -56971,7 +56971,7 @@
 - How much of this role is product work, and how much is engineering work?
 - How much independence in decision-making does this role assume?
 - Where are the boundaries of responsibility for this role?
-- What is this person individually responsible for, and what is owned by the team as a whole?
+- What is the person in this role individually responsible for, and what is owned by the team as a whole?
 - Which areas of responsibility definitely do not fall under this role?
 - What decisions will the person in this role be able to make independently?
 - Which decisions need alignment, and with whom?
