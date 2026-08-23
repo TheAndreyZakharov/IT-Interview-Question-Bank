@@ -1,0 +1,20 @@
+---
+# Check the bank without changing files.
+go run ./tools/cmd/normalize-bank --repo .
+# Apply safe normalization changes.
+go run ./tools/cmd/normalize-bank --repo . --write
+---
+
+
+---
+# Preview full ID reindex without changing files.
+go run ./tools/cmd/normalize-bank --repo . --reindex
+# Reindex all IDs and update answer headings.
+go run ./tools/cmd/normalize-bank --repo . --reindex --write
+---
+
+
+---
+# Show bank coverage and unanswered questions.
+go run ./tools/cmd/bank-stats --repo .
+---
