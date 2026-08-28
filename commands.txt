@@ -18,3 +18,10 @@ go run ./tools/cmd/normalize-bank --repo . --reindex --write
 # Show bank coverage and unanswered questions.
 go run ./tools/cmd/bank-stats --repo .
 ---
+
+
+---
+# One-time: create RU answer files for terminal sections 3.7 through 20.12.
+# The command never overwrites an existing answer file.
+go run ./tools/cmd/create-ru-answer-files --repo .
+---
