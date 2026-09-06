@@ -94,7 +94,19 @@
 ### 4.7 Go
 ### 4.8 Ruby / Rails
 ### 4.9 SQL and SQL Dialects
-### 4.10 General Questions About Languages and Technology Choices
+### 4.10 C and C++
+#### 4.10.1 C
+#### 4.10.2 C++
+### 4.11 C# and .NET
+### 4.12 PHP
+### 4.13 Rust
+### 4.14 Swift
+### 4.15 Kotlin
+### 4.16 Lua
+### 4.17 Assembly
+### 4.18 Bash and Shell Scripting
+### 4.19 Dart
+### 4.20 General Questions About Programming Languages and Technology Choice
 
 ## 5. Frontend
 ### 5.1 General Frontend Development Questions

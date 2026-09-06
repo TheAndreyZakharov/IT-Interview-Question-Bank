@@ -5,7 +5,6 @@ import (
 	"io"
 	"os"
 	"path/filepath"
-	"strconv"
 	"strings"
 )
 
@@ -99,14 +98,14 @@ func commitStaged(staged []StagedFile) error {
 	return nil
 }
 
-func isBlank(line string) bool { return strings.TrimSpace(stripBlockquotePrefix(line)) == "" }
+func isBlank(line string) bool { return strings.TrimSpace(line) == "" }
 
 func isAnswerMarker(line string) bool {
-	return answerMarkRE.MatchString(strings.TrimSpace(stripBlockquotePrefix(line)))
+	return answerMarkRE.MatchString(strings.TrimSpace(line))
 }
 
 func isFenceDelimiter(line string) bool {
-	trimmed := strings.TrimSpace(stripBlockquotePrefix(line))
+	trimmed := strings.TrimSpace(line)
 	return strings.HasPrefix(trimmed, "```") || strings.HasPrefix(trimmed, "~~~")
 }
 
@@ -203,7 +202,7 @@ func processAnswerFile(file string, language Language, index *Index, stage bool)
 				seenAnswerIDs[question.ID] = answer
 				answers = append(answers, answer)
 				newQuestionLine := "- **" + question.Text + "** [id: " + question.ID + "]"
-				if newQuestionLine != stripBlockquotePrefix(pending.line.Text) {
+				if newQuestionLine != pending.line.Text {
 					kind := "answer-id"
 					if pending.hasID {
 						kind = "answer-heading"
@@ -221,7 +220,7 @@ func processAnswerFile(file string, language Language, index *Index, stage bool)
 						return nil, StagedFile{}, nil, 0, err
 					}
 				}
-				if err := writeAnswerLine(output, line, stripBlockquotePrefix(line.Text), &quoteLinesRemoved); err != nil {
+				if err := writeAnswerLine(output, line, line.Text, &quoteLinesRemoved); err != nil {
 					return nil, StagedFile{}, nil, 0, err
 				}
 				pending = nil
@@ -247,29 +246,45 @@ func processAnswerFile(file string, language Language, index *Index, stage bool)
 			pending = &pendingAnswerQuestion{line: line, text: text, declaredID: id, hasID: hasID, section: section}
 			continue
 		}
+		if !inFence {
+			outlineText, outlineID, _, outlineOK, outlineErr := parseSourceQuestion(line.Text, language)
+			if outlineErr != nil {
+				return nil, StagedFile{}, nil, 0, fmt.Errorf("%s:%d: %w", file, line.Number, outlineErr)
+			}
+			if outlineOK && outlineID != "" {
+				question, resolveErr := resolveAnswerQuestion(index, section, outlineText)
+				if resolveErr == nil {
+					newOutlineLine := "- " + question.Text + " [id: " + question.ID + "]"
+					if newOutlineLine != line.Text {
+						changes = append(changes, Change{File: file, Line: line.Number, Kind: "outline-id", Text: question.ID})
+					}
+					if err := writeAnswerLine(output, line, newOutlineLine, &quoteLinesRemoved); err != nil {
+						return nil, StagedFile{}, nil, 0, err
+					}
+					continue
+				}
+			}
+		}
 
 		if isFenceDelimiter(line.Text) {
-			if err := writeAnswerLine(output, line, stripBlockquotePrefix(line.Text), &quoteLinesRemoved); err != nil {
+			if err := writeAnswerLine(output, line, line.Text, &quoteLinesRemoved); err != nil {
 				return nil, StagedFile{}, nil, 0, fmt.Errorf("write fence at %s:%d: %w", file, line.Number, err)
 			}
 			inFence = !inFence
 			continue
 		}
 		if inFence {
-			if err := writeAnswerLine(output, line, stripBlockquotePrefix(line.Text), &quoteLinesRemoved); err != nil {
+			if err := writeAnswerLine(output, line, line.Text, &quoteLinesRemoved); err != nil {
 				return nil, StagedFile{}, nil, 0, fmt.Errorf("write code line at %s:%d: %w", file, line.Number, err)
 			}
 			continue
 		}
 
-		if err := writeAnswerLine(output, line, stripBlockquotePrefix(line.Text), &quoteLinesRemoved); err != nil {
+		if err := writeAnswerLine(output, line, line.Text, &quoteLinesRemoved); err != nil {
 			return nil, StagedFile{}, nil, 0, fmt.Errorf("write line at %s:%d: %w", file, line.Number, err)
 		}
 	}
 
-	if quoteLinesRemoved > 0 {
-		changes = append(changes, Change{File: file, Kind: "blockquote-prefix", Text: strconv.Itoa(quoteLinesRemoved)})
-	}
 	if output != nil {
 		if err := output.Close(); err != nil {
 			_ = os.Remove(staged.Temp)
@@ -285,14 +300,10 @@ func processAnswerFile(file string, language Language, index *Index, stage bool)
 }
 
 func writeAnswerLine(output *os.File, line rawLine, text string, quoteLinesRemoved *int) error {
-	normalized := stripBlockquotePrefix(text)
-	if normalized != line.Text && quoteLinesRemoved != nil {
-		*quoteLinesRemoved = *quoteLinesRemoved + 1
-	}
 	if output == nil {
 		return nil
 	}
-	return writeRawLine(output, normalized, line.Ending)
+	return writeRawLine(output, text, line.Ending)
 }
 
 func resolveAnswerQuestion(index *Index, section, text string) (*Question, error) {

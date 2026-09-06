@@ -13,6 +13,7 @@ type NormalizationReport struct {
 	NewQuestionIDs    int
 	Answers           int
 	NewAnswerIDs      int
+	OutlineIDsUpdated int
 	RemovedQuoteLines int
 	RepairedHeadings  int
 	ChangedFiles      int
@@ -23,7 +24,7 @@ type NormalizationReport struct {
 // new IDs to every answer heading. It is intentionally separate from
 // Normalize because changing stable IDs is a deliberate migration.
 func Reindex(repo string, language Language, write bool) (NormalizationReport, error) {
-	index, _, err := BuildIndex(repo, language)
+	index, _, err := BuildReindexIndex(repo, language)
 	if err != nil {
 		return NormalizationReport{}, err
 	}
@@ -89,6 +90,7 @@ func Reindex(repo string, language Language, write bool) (NormalizationReport, e
 			}
 			seenAnswerIDs[answer.ID] = answer
 		}
+		report.OutlineIDsUpdated += countChanges(answerChanges, "outline-id")
 		report.Answers += len(answers)
 		report.RemovedQuoteLines += quoteLinesRemoved
 		report.RepairedHeadings += countChanges(answerChanges, "answer-id") + countChanges(answerChanges, "answer-heading") + countChanges(answerChanges, "answer-id-mismatch")
@@ -167,6 +169,7 @@ func Normalize(repo string, language Language, write bool) (NormalizationReport,
 			}
 			seenAnswerIDs[answer.ID] = answer
 		}
+		report.OutlineIDsUpdated += countChanges(answerChanges, "outline-id")
 		report.Answers += len(answers)
 		report.NewAnswerIDs += countAnswerChanges(answerChanges)
 		report.RemovedQuoteLines += quoteLinesRemoved

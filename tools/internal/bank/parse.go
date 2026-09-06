@@ -17,7 +17,7 @@ import (
 var (
 	headingRE           = regexp.MustCompile(`^#{1,4}\s+(\d+(?:\.\d+){0,3})\b`)
 	topicNumberRE       = regexp.MustCompile(`^##\s+(\d+)\b`)
-	questionLineRE      = regexp.MustCompile(`^(>\s*)?-\s+(.*)$`)
+	questionLineRE      = regexp.MustCompile(`^-\s+(.*)$`)
 	answerHeadRE        = regexp.MustCompile(`^-{1,2}\s+\*\*(.*?)\*\*(?:\s+(.*))?$`)
 	answerFileSectionRE = regexp.MustCompile(`^#{2,4}\s+(\d+(?:\.\d+){0,3})\b`)
 	idSuffixRE          = regexp.MustCompile(`\s+\[id:\s*([A-Z]{2}-[0-9]{6})\]\s*$`)
@@ -77,20 +77,8 @@ func writeRawLine(w io.Writer, text, ending string) error {
 	return err
 }
 
-func stripBlockquotePrefix(line string) string {
-	for {
-		if !strings.HasPrefix(line, ">") {
-			return line
-		}
-		line = strings.TrimPrefix(line, ">")
-		if strings.HasPrefix(line, " ") || strings.HasPrefix(line, "\t") {
-			line = line[1:]
-		}
-	}
-}
-
 func headingCode(line string) string {
-	m := headingRE.FindStringSubmatch(stripBlockquotePrefix(line))
+	m := headingRE.FindStringSubmatch(line)
 	if len(m) == 0 {
 		return ""
 	}
@@ -144,7 +132,7 @@ func parseSourceQuestion(line string, language Language) (text, id, prefix strin
 	if len(m) == 0 {
 		return "", "", "", false, nil
 	}
-	base, parsedID, hasID, parseErr := parseID(m[2], language)
+	base, parsedID, hasID, parseErr := parseID(m[1], language)
 	if parseErr != nil {
 		return "", "", "", false, parseErr
 	}
@@ -154,11 +142,10 @@ func parseSourceQuestion(line string, language Language) (text, id, prefix strin
 	if !hasID {
 		parsedID = ""
 	}
-	return base, parsedID, m[1], true, nil
+	return base, parsedID, "", true, nil
 }
 
 func parseAnswerQuestion(line string, language Language) (text, id string, hasID, ok bool, err error) {
-	line = stripBlockquotePrefix(line)
 	m := answerHeadRE.FindStringSubmatch(line)
 	if len(m) == 0 {
 		return "", "", false, false, nil

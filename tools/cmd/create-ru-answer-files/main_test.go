@@ -12,7 +12,7 @@ func TestPlansForSourceCreatesOnlyTerminalSectionsInRange(t *testing.T) {
 		{code: "3", level: 2, heading: "## 3. База"},
 		{code: "3.2", level: 3, heading: "### 3.2 Старый раздел", questions: []string{"- Старый вопрос? [id: RU-000001]"}},
 		{code: "3.7", level: 3, heading: "### 3.7 Безопасность"},
-		{code: "3.7.1", level: 4, heading: "#### 3.7.1 OAuth2 / OIDC", questions: []string{"- Что такое OAuth2? [id: RU-000002]"}},
+		{code: "3.7.1", level: 4, heading: "#### 3.7.1 OAuth2 / OIDC: основы", questions: []string{"- Что такое OAuth2? [id: RU-000002]"}},
 		{code: "3.7.2", level: 4, heading: "#### 3.7.2 JWT", questions: []string{"- Что такое JWT? [id: RU-000003]"}},
 	}
 
@@ -23,13 +23,13 @@ func TestPlansForSourceCreatesOnlyTerminalSectionsInRange(t *testing.T) {
 	if len(plans) != 2 {
 		t.Fatalf("plansForSource() produced %d files, want 2", len(plans))
 	}
-	if got, want := plans[0].path, "/answer-root/## 3. База/### 3.7 Безопасность/#### 3.7.1 OAuth2 - OIDC.md"; got != want {
+	if got, want := plans[0].path, "/answer-root/## 3. База/### 3.7 Безопасность/#### 3.7.1 OAuth2 - OIDC- основы.md"; got != want {
 		t.Fatalf("first path = %q, want %q", got, want)
 	}
 	if strings.Contains(plans[0].content, "3.2 Старый раздел") {
 		t.Fatal("older section was included in generated content")
 	}
-	if !strings.Contains(plans[0].content, "## 3. База\n\n### 3.7 Безопасность\n\n#### 3.7.1 OAuth2 / OIDC") {
+	if !strings.Contains(plans[0].content, "## 3. База\n\n### 3.7 Безопасность\n\n#### 3.7.1 OAuth2 / OIDC: основы") {
 		t.Fatalf("generated hierarchy is incorrect:\n%s", plans[0].content)
 	}
 }

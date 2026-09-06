@@ -9,7 +9,7 @@ go run ./tools/cmd/normalize-bank --repo . --write
 ---
 # Preview full ID reindex without changing files.
 go run ./tools/cmd/normalize-bank --repo . --reindex
-# Reindex all IDs and update answer headings.
+# Reindex every thematic-question ID and update IDs in answer headings and outline rows.
 go run ./tools/cmd/normalize-bank --repo . --reindex --write
 ---
 
@@ -24,4 +24,21 @@ go run ./tools/cmd/bank-stats --repo .
 # One-time: create RU answer files for terminal sections 3.7 through 20.12.
 # The command never overwrites an existing answer file.
 go run ./tools/cmd/create-ru-answer-files --repo .
+---
+
+
+---
+# Preview synchronization of the full language section 4.1–4.20 into the RU and EN complete banks.
+go run ./tools/cmd/sync-new-language-sections --repo .
+# Apply that synchronization; question IDs remain only in Questions_By_Topic, not in complete banks.
+go run ./tools/cmd/sync-new-language-sections --repo . --write
+---
+
+
+---
+# Preview synchronization of every RU answer outline in one topic (topic 4 by default).
+go run ./tools/cmd/sync-ru-language-answer-outlines --repo .
+# Use --topic N for another topic, for example: --topic 6.
+# Create missing outlines and safely refresh outlines that do not contain completed answers.
+go run ./tools/cmd/sync-ru-language-answer-outlines --repo . --write
 ---

@@ -59,13 +59,14 @@ func main() {
 		if normalizeErr != nil {
 			fatal(fmt.Errorf("%s: %w", language, normalizeErr))
 		}
-		fmt.Printf("%s: questions=%d, reindexed_ids=%d, new_question_ids=%d, answers=%d, answer_headings_updated=%d, quote_lines_removed=%d, changed_files=%d\n",
+		fmt.Printf("%s: questions=%d, reindexed_ids=%d, new_question_ids=%d, answers=%d, answer_headings_updated=%d, outline_ids_updated=%d, quote_lines_removed=%d, changed_files=%d\n",
 			report.Language,
 			report.Questions,
 			report.ReindexedIDs,
 			report.NewQuestionIDs,
 			report.Answers,
 			report.RepairedHeadings,
+			report.OutlineIDsUpdated,
 			report.RemovedQuoteLines,
 			report.ChangedFiles,
 		)

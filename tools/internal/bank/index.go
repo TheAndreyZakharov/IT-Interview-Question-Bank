@@ -10,6 +10,18 @@ import (
 )
 
 func BuildIndex(repo string, language Language) (*Index, []Change, error) {
+	return buildIndex(repo, language, false)
+}
+
+// BuildReindexIndex reads source questions for a full renumbering migration.
+// Existing IDs are deliberately not treated as unique here: newly appended
+// questions can temporarily carry copied IDs until Reindex assigns the final
+// sequence. All normal validation paths still use BuildIndex.
+func BuildReindexIndex(repo string, language Language) (*Index, []Change, error) {
+	return buildIndex(repo, language, true)
+}
+
+func buildIndex(repo string, language Language, allowDuplicateIDs bool) (*Index, []Change, error) {
 	root := filepath.Join(repo, language.QuestionsDir())
 	files, err := naturalTopicFiles(root)
 	if err != nil {
@@ -45,7 +57,7 @@ func BuildIndex(repo string, language Language) (*Index, []Change, error) {
 				if number > maxNumber {
 					maxNumber = number
 				}
-				if previous, exists := seenIDs[question.ID]; exists {
+				if previous, exists := seenIDs[question.ID]; exists && !allowDuplicateIDs {
 					return nil, nil, fmt.Errorf("duplicate ID %s at %s:%d and %s:%d", question.ID, previous.File, previous.Line, question.File, question.Line)
 				}
 				seenIDs[question.ID] = question

@@ -10209,6 +10209,16 @@
 - What would you change in JavaScript if you could?
 - What 3 most difficult aspects of JavaScript would you highlight for interviews?
 - How would you explain to a beginner why JavaScript is both easy to start with and deep and difficult underneath?
+- When should a JavaScript UI choose React, Vue, Angular, or Svelte, and what trade-offs does each approach have?
+- How does React Compiler change the need for manual `useMemo` and `useCallback`, and why should it not be trusted without measurement?
+- How do you manage cache, invalidate data, and avoid race conditions in TanStack Query?
+- When is Redux Toolkit justified, and when are local state, Context, or Zustand enough?
+- Which risks arise from storing server state in Redux instead of a specialized data-fetching library?
+- How does Zod validate form data and HTTP responses, and why does TypeScript not replace runtime validation?
+- How does Vite differ from Webpack in its dev server, HMR, and production build, and which migration risks matter?
+- How do Vitest, Jest, and Playwright divide unit, component, browser, and end-to-end testing?
+- How should ESLint, Prettier, and type-aware linting be configured without making development unnecessarily slow?
+- Which security and performance problems can arise from careless use of third-party npm packages in a frontend project?
 
 ### 4.2 TypeScript
 - What is TypeScript?
@@ -10394,6 +10404,14 @@
 - Which 3–5 TypeScript features do you consider most valuable in real-world development?
 - Which improvements in TypeScript in recent years do you consider the most useful?
 - What would you change in TypeScript if you could?
+- How do you connect a Zod schema to a TypeScript type without maintaining two diverging contracts?
+- When should TypeBox, io-ts, or Valibot be used instead of Zod, and what are their trade-offs?
+- How does tRPC provide end-to-end typing, and when is an OpenAPI or GraphQL contract more suitable?
+- How do you generate a TypeScript client from OpenAPI without letting generation hide a breaking API change?
+- How do you type a Prisma or Drizzle ORM client safely without turning database types into a domain model?
+- How do you type application configuration through an env schema, and why is `process.env` not type-safe by itself?
+- When are `tsup`, `rollup`, or `unbuild` suitable for a TypeScript library, and how do you choose ESM or CJS?
+- How do you use API Extractor or a similar tool to control a TypeScript package's public API?
 
 ### 4.3 Node.js
 
@@ -10707,6 +10725,18 @@
 - Which questions about Express/Fastify/NestJS do you yourself consider the most revealing in an interview?
 - How would you explain to a non-technical person how a Node.js server works?
 - Which questions would you ask the team if you were joining their Node.js project for the first time?
+- How is `undici` related to Node.js built-in `fetch`, and when is a separate HTTP client needed?
+- How do you configure `pino` for structured logs, secret redaction, and correlation IDs without unnecessary allocations?
+- How do Zod or Ajv validate request and response data while keeping schemas consistent between services?
+- When is Prisma more suitable than Drizzle, TypeORM, or direct SQL, and which risks does each abstraction create?
+- How do you avoid N+1 queries, unnecessary transactions, and unbounded reads when using an ORM in Node.js?
+- How do BullMQ and Redis support background jobs, retries, and dead-letter scenarios?
+- How do you make a BullMQ worker idempotent and avoid losing a job during redeployment?
+- When should realtime communication use Socket.IO, native WebSocket, or SSE?
+- How do `@grpc/grpc-js` and protobuf support typed service-to-service communication, and which schema-versioning challenges arise?
+- How do you use the OpenTelemetry SDK in Node.js for HTTP, queue, and database traces without uncontrolled overhead?
+- How do you manage npm dependency vulnerabilities, licenses, and supply-chain risks in CI?
+- Which signs show that dependency injection, decorators, or metaprogramming in NestJS have become unnecessary complexity?
 
 ### 4.4 Java
 - What is Java and what are its key features?
@@ -10947,6 +10977,14 @@
 - Which modern features of recent Java versions do you consider the most useful?
 - Which changes in Java over the last few years have really improved the language for production development?
 - If you were designing a new Java service from scratch, which language-level and JVM-level decisions would you make immediately?
+- How do you combine JUnit 5, AssertJ, and Mockito when testing Java code, and when does a mock make a test worse?
+- Why use Testcontainers for PostgreSQL, Kafka, or Redis, which issues does it catch compared with mocks, and how do you keep CI fast?
+- Which Jackson settings matter for JSON, dates, polymorphic types, and safe deserialization?
+- When is MapStruct more useful than manual DTO mapping, and when does generated mapping hide important business logic?
+- How do you choose between a local Caffeine cache and distributed Redis, considering consistency, invalidation, and load?
+- How do you apply Resilience4j timeouts, retries, circuit breakers, and bulkheads, and why can unbounded retries amplify an outage?
+- How do Micrometer and OpenTelemetry help observe a Java service, and which metrics, traces, and tags are genuinely useful?
+- What must be considered when using Java Kafka or RabbitMQ clients: idempotency, redelivery, ordering, and poison messages?
 
 ### 4.5 Spring и Spring Boot
 
@@ -12279,6 +12317,14 @@
 - How do you handle asynchronous tasks in Spring?
 - What does `@Async` do?
 - When is `@Async` useful, and when is a queue/broker better?
+- When does Spring Data JPA simplify data access, and when do derived queries, repositories, and specifications become too implicit?
+- How do you use Flyway or Liquibase for database migrations, and why should a rollback strategy be designed before deployment?
+- How do you configure a Spring Kafka consumer, retries, and a dead-letter topic so that messages are neither lost nor processed forever?
+- Which problems do Spring Cloud Config, Gateway, and service discovery solve, and when do they add unnecessary distributed complexity?
+- How do you correctly build a Spring Security resource server with OAuth 2.0/OIDC and method security instead of only verifying a JWT signature?
+- How do Spring Boot Test, slice tests, and Testcontainers integration tests differ, and how do you choose the right level?
+- How do you combine Spring Cache with Caffeine or Redis without producing stale data or a cache stampede?
+- When should you choose WebClient, RestClient, or OpenFeign for HTTP calls, and how do you provide timeouts, retries, and observability?
 
 ### 4.6 Python
 - What is Python and what kinds of tasks is it typically used for?
@@ -12506,6 +12552,14 @@
 - How would you review a Python code sample from a candidate in an interview?
 - Which Python questions would you ask junior, middle, and senior candidates?
 - Which Python topics are most often underestimated in interviews?
+- Why use uv, Poetry, or pip-tools, and how do they provide reproducible dependencies and safer upgrades?
+- When should you choose httpx over requests, and what traps arise when synchronous and asynchronous HTTP code are mixed?
+- How do you build Celery workers with Redis or RabbitMQ while ensuring idempotent tasks, retries, and control of poison messages?
+- How do Session and transactions work in SQLAlchemy 2.x, and which differences matter between synchronous and asynchronous modes?
+- How do you use Alembic for migrations so that the database schema changes safely during deployment?
+- How do you use Pydantic v2 for API boundaries, DTOs, settings, and ORM data without mixing them with the domain model?
+- When should you choose Django REST Framework and when FastAPI, considering ecosystem, validation, async support, and team maintenance?
+- How do you combine pytest, Hypothesis, and testcontainers-python so tests verify real invariants and infrastructure integrations?
 
 ### 4.7 Go
 - What is Go, and what kinds of problems is it usually chosen for?
@@ -12708,6 +12762,14 @@
 - How do you prepare a Go service for production: config, logs, health checks, metrics, tracing, graceful shutdown?
 - What design mistakes in Go services most often lead to incidents?
 - How would you explain the philosophy of Go to someone coming from Java or Python?
+- How do you choose between `net/http` with chi and Gin, Echo, or Fiber, considering middleware, performance, and ecosystem compatibility?
+- How do you use grpc-go, Protobuf, and grpc-gateway, and what trade-offs arise between gRPC and REST APIs?
+- When should you choose GORM, sqlc, sqlx, or plain `database/sql` to retain SQL control without losing development speed?
+- How do you validate incoming data in Go with go-playground/validator or JSON Schema without turning validation into opaque tag magic?
+- How do you choose between `log/slog`, zap, and zerolog for structured logging in a high-load Go service?
+- How do you add Prometheus and OpenTelemetry to a Go service without creating excessive metric labels or expensive traces?
+- How do Cobra and Viper help build a CLI, and what risks come from global configuration and implicit settings sources?
+- How do you use testcontainers-go, gomock, and `httptest` for fast, isolated, and realistic tests of a Go service?
 
 ### 4.8 Ruby / Rails
 - What is Ruby, and how does this language differ from Java, Python, and JavaScript?
@@ -12902,6 +12964,12 @@
 - What 3 main weaknesses of Rails would you name?
 - What 3 strengths of Rails would you name?
 - If you were designing a new backend product today, in which cases would you choose Rails?
+- How do RSpec, FactoryBot, and Capybara complement one another, and how do you avoid a slow and brittle Rails test suite?
+- When is Sidekiq with Redis appropriate for Rails background jobs, and when do you need a separate broker, idempotency, and different delivery guarantees?
+- How does Active Record produce N+1 queries, and how do Bullet, eager loading, and profiling help avoid treating the symptom blindly?
+- When are Hotwire, Turbo, and Stimulus more appropriate than React/Vue, and what are the limits of server-driven UI?
+- How do you choose Devise, Pundit, or CanCanCan for authentication and authorization without mixing permission checks into controllers?
+- How do Sorbet and RuboCop help a large Ruby team, and where does Ruby static typing deliver the most value?
 
 ### 4.9 SQL and SQL Dialects
 - What is SQL, and what is it used for?
@@ -13134,8 +13202,2414 @@
 - What 3 things in SQL do even experienced developers most often do wrong?
 - How would you explain the difference between the logical correctness of a SQL query and its performance?
 - If you had one week to improve database performance in a project, where would you start?
+- When is a query builder or ORM appropriate on top of SQL, and when is it better to keep a complex query explicit and test it?
+- How do you choose a driver and connection pool for PostgreSQL, MySQL, or SQLite, and which pool settings are tied to real database capacity?
+- How do Flyway, Liquibase, or ORM migrations help manage a schema, and why are migrations not a substitute for backups and a rollback plan?
+- What are the benefits and drawbacks of jOOQ, SQLAlchemy Core, or Dapper-like approaches compared with a full-featured ORM?
+- How do SQL libraries parameterize a query, and why is string concatenation dangerous even when an ORM is in use?
+- When should you use a dedicated Redis, Elasticsearch, or message-broker client instead of trying to describe everything through a SQL abstraction?
 
-### 4.10 General Questions About Programming Languages and Technology Choice
+### 4.10 C and C++
+
+#### 4.10.1 C
+- What is C, and what kinds of tasks is it usually chosen for?
+- How does C differ from C++?
+- Why is C called a systems programming language?
+- What stages does a C program go through from source code to execution?
+- What do the preprocessor, compiler, assembler, and linker do in a C toolchain?
+- What is a translation unit in C?
+- What is the difference between a `.c` source file and a `.h` header file?
+- Why are header files needed in C?
+- What is an include guard, and why is it needed?
+- How does `#include <...>` differ from `#include "..."`?
+- What is a preprocessor macro?
+- When are C macros useful, and when are they dangerous?
+- How does `#define` differ from `const`?
+- What is conditional compilation, and where are `#if`, `#ifdef`, and `#ifndef` used?
+- What are the types `char`, `short`, `int`, `long`, `long long`, `float`, and `double`?
+- Why is the size of `int` not guaranteed to be the same on every platform?
+- When should fixed-width types from `<stdint.h>` be used?
+- How does `signed char` differ from `unsigned char`?
+- What are integer promotions and the usual arithmetic conversions?
+- Why can mixing signed and unsigned types cause bugs?
+- What is integer overflow in C?
+- How does signed overflow differ from unsigned overflow in C?
+- What is a pointer?
+- How does a pointer differ from the value stored in a variable?
+- What do `&` and `*` mean when working with pointers?
+- What is `NULL`, and how does it differ from an invalid pointer?
+- What is a dangling pointer?
+- What is a wild pointer?
+- How does an array differ from a pointer in C?
+- Why does an array name often decay to a pointer to its first element?
+- In which cases does an array not decay to a pointer?
+- How should an array be passed to a function?
+- Why can a function not reliably determine an array's size with `sizeof`?
+- What is a C string?
+- Why must a C string end with the null byte `\0`?
+- How does `strlen` differ from `sizeof` for a string?
+- What risks do `strcpy`, `strcat`, `sprintf`, and `gets` create?
+- Which safer alternatives are used instead of unsafe string functions?
+- What is a buffer overflow, and why is it especially dangerous in C?
+- How is process memory laid out: code, data, BSS, heap, and stack?
+- How does an automatic variable differ from a static variable?
+- What do the storage-class specifiers `auto`, `static`, `extern`, and `register` mean?
+- How does `static` inside a function differ from `static` at file scope?
+- What is linkage in C?
+- How does external linkage differ from internal linkage?
+- What are a variable's scope and lifetime?
+- What is dynamic memory allocation?
+- How do `malloc`, `calloc`, `realloc`, and `free` differ?
+- What happens if `free` is called twice on the same allocation?
+- Why is a pointer often set to `NULL` after `free`?
+- Which memory errors can AddressSanitizer and Valgrind find?
+- What is a memory leak, and how can it be found in a C program?
+- What is a `struct`, and how is a custom data type declared?
+- How does a `struct` differ from a `union`?
+- What are padding and alignment in structures?
+- Why can field order affect a structure's size?
+- What is an `enum`, and when should it be used?
+- How does `typedef` differ from `#define` for creating a type alias?
+- What is const-correctness, and why does a C API need it?
+- How do `const int *`, `int * const`, and `const int * const` differ?
+- What is `volatile`, and why is it not a substitute for thread synchronization?
+- What is `restrict`, and when can it help an optimizer?
+- What is undefined behavior in C?
+- Give examples of undefined behavior involving memory, arithmetic, and evaluation order.
+- Why is an out-of-bounds array access undefined behavior?
+- What is a sequence point, and why must function-argument evaluation order not be assumed?
+- How do you write a comparison function for `qsort`, and what mistakes are common?
+- What is a function pointer, and where is it used?
+- How can a callback be implemented in C?
+- How do error codes and `errno` work in C?
+- How should errors from system calls and standard-library functions be checked?
+- How do `fopen`/`fread`/`fwrite` differ from `open`/`read`/`write`?
+- What is I/O buffering?
+- What is an ABI, and why does it matter for C libraries?
+- How do you create a static and a shared C library?
+- How does `.a` differ from `.so` or `.dylib`?
+- What roles do `gcc`, `clang`, `make`, CMake, and pkg-config play in a C project?
+- How do you enable strict compiler warnings, and why should they not be ignored?
+- Which sanitizer flags should be used while developing C code?
+- How can a C API make memory ownership clear to its caller?
+- How do you design a C library interface with backward compatibility in mind?
+- How does C interact with an operating system, sockets, and system calls?
+- When is C still the best choice, and when should C++, Rust, or another language be chosen?
+- What are expressions and statements in C?
+- Which control-flow statements does C provide?
+- When should `if`, `switch`, `for`, `while`, and `do while` be used?
+- What are the pitfalls of `switch` and fallthrough?
+- What do `break`, `continue`, `return`, and `goto` do?
+- Why is `goto` usually avoided, and when can it be justified in low-level code?
+- What is recursion, and which risks does it introduce in C?
+- How are functions declared and defined in C?
+- How are function arguments passed in C?
+- How can pass-by-reference be emulated in C?
+- What is a variadic function, and how do `va_list`, `va_start`, and `va_arg` work?
+- What type-safety and security risks do variadic functions have?
+- What is an inline function, and how does it differ from a macro?
+- What guarantees and limitations does the `inline` keyword have in C?
+- What are `_Bool` and `bool` from `<stdbool.h>`?
+- How do `&&`, `||`, and `!` work?
+- Why is short-circuit evaluation important for correct C code?
+- What are lvalues and rvalues in C?
+- What are explicit and implicit type conversions?
+- What risks are introduced by casting pointers between incompatible types?
+- What is the strict-aliasing rule?
+- How can strict aliasing break code under optimization?
+- When may an object be accessed through an `unsigned char *`?
+- What is endianness, and why does C code sometimes need to consider it?
+- How can binary data from a network or file be read safely in C?
+- Why should a byte-array pointer not be blindly cast to a structure pointer?
+- What is an alignment requirement, and how can an address's alignment be checked?
+- What does `sizeof` do, and when is it evaluated at compile time?
+- What is a variable-length array, and why should it be used carefully?
+- How do multidimensional arrays work in C?
+- How should a two-dimensional array be passed to a function?
+- What is a flexible array member?
+- In which structures is a flexible array member useful, and what are its restrictions?
+- What is a bit field, and when is it justified?
+- Why should bit-field layout not be used for a portable binary protocol?
+- What are anonymous structures and anonymous unions in C?
+- What is a designated initializer?
+- How can an array or structure be initialized partially?
+- What happens to an uninitialized automatic variable?
+- How does zero initialization of static objects differ from local-variable initialization?
+- What is a compound literal?
+- When is a compound literal more convenient than a separate variable?
+- How do `++` and `--` work?
+- Why can expressions that modify one variable several times be undefined behavior?
+- What are bitwise operations, and where are they used in C?
+- How do you work correctly with bit masks and flags?
+- What is shift overflow, and which shift mistakes are common?
+- How do you test, set, and clear a bit?
+- What is the comma operator, and why should it not be confused with an argument separator?
+- What is operator precedence, and why is it better to use explicit parentheses?
+- What is `_Static_assert`, and which invariants should be checked at compile time?
+- What is `_Generic`, and what is generic selection used for in C11?
+- What is `_Atomic`, and which guarantees does it provide?
+- How does atomicity differ from an algorithm being thread-safe?
+- Which memory orders exist in C11 atomics?
+- When is `memory_order_relaxed` sufficient, and when are acquire/release needed?
+- What is a data race, and why is it undefined behavior in C?
+- How do you use a mutex and condition variable through pthreads?
+- How does a mutex differ from a spinlock?
+- How do deadlock, livelock, and starvation arise in a C program?
+- How can data be passed safely between threads?
+- How can a producer-consumer queue be organized in C?
+- What is thread-local storage, and how is it used in C?
+- How does `_Thread_local` differ from a static global variable?
+- How should POSIX signals be handled in C?
+- Which functions are safe to call from a signal handler?
+- What is an async-signal-safe function?
+- How do an error code, `errno`, and an exceptional condition differ in a C API?
+- How do you design a function that returns both data and a detailed error?
+- Why is returning `NULL` insufficient for every API?
+- How should memory ownership be documented in a header file?
+- What contract should a function accepting a buffer and its size have?
+- Why is `size_t` used for buffer sizes?
+- How do `size_t`, `ptrdiff_t`, `intptr_t`, and `uintptr_t` differ?
+- How can integer overflow be avoided when computing an allocation size?
+- Why is `malloc(count * sizeof *ptr)` safer than spelling out a type size?
+- How should `realloc` be used without losing the old pointer on failure?
+- What is allocation failure, and how should it be handled?
+- Why must memory not be freed through an incompatible allocator?
+- How is ownership modeled in C without a built-in ownership model?
+- Which ownership conventions should a C-development team adopt?
+- How can an RAII-like cleanup pattern be implemented in C?
+- What is a cleanup label, and how does it prevent leaks across multiple errors?
+- How does the Linux-kernel `goto cleanup` error model work, and why is it practical?
+- How do you read and write files in text and binary modes?
+- Which errors can occur with `scanf`, and why is it used carefully?
+- How can a user string be parsed safely into a number?
+- Why is `strtol` better than `atoi`?
+- How do you check overflow and trailing characters after `strtol`?
+- What is a locale, and how does it affect `printf`, `scanf`, and character classification?
+- How do you prevent a format-string vulnerability?
+- Why must a user string not be passed as the format string to `printf`?
+- How do you use format specifiers correctly for `size_t`, pointers, and 64-bit numbers?
+- What is `snprintf`, and how should its result be checked?
+- How does `memcpy` work, and how does it differ from `memmove`?
+- Why is `memcpy` on overlapping ranges a bug?
+- What do `memset` and `memcmp` do, and what subtleties do they have?
+- Why can arbitrary floats or pointers not be initialized to one with `memset`?
+- How do you compare structures, and why can `memcmp` give the wrong semantic result?
+- What is an opaque pointer, and how can it hide a C library implementation?
+- How can encapsulation and pseudo-OOP be organized in C?
+- How can polymorphism be implemented with a table of function pointers?
+- How can a plugin system be designed in C?
+- What is symbol visibility, and why hide internal shared-library symbols?
+- How do the dynamic loader, `dlopen`, and `dlsym` work?
+- Which ABI risks arise when an exported library structure changes?
+- How do you version a C API and shared library?
+- How does source compatibility differ from binary compatibility?
+- How do you cross-compile a C program?
+- What are a target triple, sysroot, and toolchain file?
+- How do `-O0`, `-O2`, and `-O3` differ, and why can optimization expose UB?
+- Why does a debug build not prove a C program is correct?
+- How should `-Wall`, `-Wextra`, `-Wpedantic`, and `-Werror` be used sensibly?
+- Which static analyzers are used for C code?
+- How do clang-tidy, cppcheck, and compiler warnings complement one another?
+- What do AddressSanitizer, UndefinedBehaviorSanitizer, LeakSanitizer, and ThreadSanitizer check?
+- Why is fuzzing especially useful for C parsers and network services?
+- How do you write a fuzz target for an input-parsing function?
+- Which secure-coding rules matter most in C?
+- What is CWE, and which vulnerabilities does C code create most often?
+- How do you protect a C program from integer overflow, use-after-free, and out-of-bounds access?
+- How do you conduct a C code review: what should be examined first?
+- Which practices keep a large C codebase maintainable?
+- How would you explain C's trade-offs: control, performance, portability, and the cost of mistakes?
+- How do you choose between libc, musl, and uClibc, and what are the consequences for portability, binary size, and container behavior?
+- How do you use CMake or Meson together with pkg-config for a C project without tying a build to a developer's local paths?
+- How can GLib simplify portable C code, and when do its own types and event loop become an unnecessary dependency?
+- When are libuv or libevent useful for a networked C service, and which callback and resource-lifecycle risks must be controlled?
+- How do you use libcurl safely: timeouts, TLS verification, cancellation, retries, and resource cleanup?
+- How do you use cmocka, Unity, or Criterion for C-code tests, and where are integration tests with real system libraries needed?
+
+#### 4.10.2 C++
+- What is C++, and where is it commonly used?
+- How does modern C++ differ from C?
+- Which C++ standard versions matter in practical work?
+- What do C++17, C++20, and C++23 mean?
+- How do compilation and linking work for a C++ program?
+- How do `.cpp`, `.h`, and `.hpp` files differ?
+- What is the difference between a declaration and a definition?
+- What is the One Definition Rule?
+- Which problems do include guards solve?
+- What is `#pragma once`, and what are its trade-offs?
+- What is a namespace, and why is it needed?
+- How do `using` declarations and using directives differ?
+- Why is `using namespace std;` dangerous in a header?
+- Which fundamental types exist in C++?
+- How does `auto` differ from `decltype`?
+- How does type deduction for `auto` work?
+- What does `decltype(auto)` do?
+- What is a type alias, and why is `using` often clearer than `typedef`?
+- How do `const`, `constexpr`, and `consteval` differ?
+- What is a compile-time constant in C++?
+- What is `constinit`?
+- How does a reference differ from a pointer?
+- How does an lvalue reference differ from an rvalue reference?
+- What are the value categories lvalue, xvalue, and prvalue?
+- What are move semantics?
+- What does `std::move` do, and what does it not do?
+- Why is an object valid but unspecified after being moved from?
+- What is perfect forwarding?
+- How do `std::forward` and a forwarding reference work?
+- Why is a universal reference not always a forwarding reference?
+- What is RAII?
+- Why is RAII a central modern C++ idiom?
+- Which resources besides memory should be wrapped in RAII objects?
+- What are constructors and destructors?
+- In which order are base classes, fields, and destructors called?
+- What is a default constructor?
+- How does a copy constructor differ from copy assignment?
+- How does a move constructor differ from move assignment?
+- What is the rule of zero?
+- What are the rule of three and the rule of five?
+- When does the compiler not generate special member functions automatically?
+- When should `= default` be written explicitly?
+- When should `= delete` be used?
+- What is an explicit constructor, and which implicit conversions does it prevent?
+- What is a delegating constructor?
+- What is a member-initializer list, and why should fields be initialized there?
+- In which order are class fields actually initialized?
+- What is aggregate initialization?
+- What is a designated initializer in C++20?
+- What is encapsulation in C++?
+- How do `public`, `private`, and `protected` differ?
+- What is inheritance, and when is it justified?
+- How do public, protected, and private inheritance differ?
+- Why is composition often better than inheritance?
+- What is a virtual function?
+- What is a vtable, and what overhead does dynamic polymorphism create?
+- When must a base-class destructor be virtual?
+- What is a pure virtual function and an abstract class?
+- What does `override` do, and why should it always be used?
+- What does `final` mean for a class or method?
+- What is object slicing?
+- How can slicing be avoided with polymorphic objects?
+- What is multiple inheritance?
+- When is multiple inheritance acceptable, and when is it dangerous?
+- What is the diamond problem and virtual inheritance?
+- What is static polymorphism?
+- How does CRTP implement static polymorphism?
+- What is a template?
+- How does a function template differ from a class template?
+- How does template instantiation happen?
+- What are specialization and partial specialization?
+- What are variadic templates?
+- What are parameter packs and fold expressions?
+- What is SFINAE?
+- How does SFINAE differ from C++20 concepts?
+- What are a concept, requires-expression, and requires-clause?
+- How do concepts improve template error messages?
+- What is template metaprogramming?
+- When can constexpr functions replace template metaprogramming?
+- What is a lambda expression?
+- How does capture by value differ from capture by reference?
+- Which risks arise when a lambda captures `this`?
+- What is a generic lambda?
+- What is a mutable lambda?
+- How is a lambda passed to a standard-library algorithm?
+- What is `std::function`, and when does its overhead matter?
+- How do a function pointer, a lambda, and `std::function` differ?
+- What is an exception in C++?
+- How do `try`, `catch`, and `throw` work?
+- When are exceptions appropriate, and when are `std::expected` or error codes better?
+- What is an exception-safety guarantee?
+- How do the basic, strong, and no-throw guarantees differ?
+- Why must a destructor not throw an exception?
+- What is `noexcept`, and how can it affect container optimizations?
+- What is stack unwinding?
+- How does RAII help when exceptions are thrown?
+- What is a smart pointer?
+- How does `std::unique_ptr` differ from `std::shared_ptr`?
+- When should `std::weak_ptr` be used?
+- What is a cyclic reference, and how does `weak_ptr` prevent it?
+- Why should `shared_ptr` not be the default ownership type?
+- What is a custom deleter?
+- How do `make_unique` and `make_shared` differ from direct `new`?
+- Which problems does shared ownership create?
+- When is a raw pointer acceptable in modern C++?
+- When should an API use a reference, pointer, `unique_ptr`, or `shared_ptr`?
+- Why should `new` and `delete` rarely appear in application C++ code?
+- What is `std::vector`, and how does it store data?
+- How does `vector` differ from `array`, `deque`, `list`, and `forward_list`?
+- What are `size` and `capacity` in a vector?
+- When does a vector invalidate iterators and references?
+- What does `reserve` do, and when is it useful?
+- How does `resize` differ from `reserve`?
+- Why does `std::vector<bool>` have an unusual specialization?
+- How do you choose between `map` and `unordered_map`?
+- Which complexity guarantees do `map` and `unordered_map` provide?
+- What are a hash collision and rehash?
+- When can `unordered_map` perform worse than expected?
+- How does `set` differ from `unordered_set`?
+- What is an iterator, and which iterator categories exist?
+- How does iterator invalidation differ from a dangling reference?
+- What is range-based `for`, and what pitfalls do temporary objects create?
+- What is the algorithms library, and why prefer it to manual loops?
+- How does `std::sort` differ from `std::stable_sort`?
+- What contract must a sorting comparator satisfy?
+- What is strict weak ordering?
+- Why can an invalid comparator result in undefined behavior?
+- What are `std::ranges`, and why are they more convenient than classic algorithms?
+- What is a view, and why can it create a dangling reference?
+- How does `std::string_view` differ from `std::string`?
+- When is `string_view` dangerous?
+- What is `std::span`?
+- How can a data range be passed without copying safely?
+- What is an allocator?
+- When are a custom allocator and `std::pmr` needed?
+- What is small-string optimization, and why must code not rely on it?
+- What is the memory layout of a C++ object?
+- How do padding and alignment affect a class size?
+- What is object lifetime in C++?
+- When does an object's lifetime begin and end?
+- What is placement new, and when is it needed?
+- Why is placement new dangerous without explicit lifetime management?
+- What is undefined behavior in C++?
+- Which common UB cases involve dangling references, overflow, and aliasing?
+- What is strict aliasing in C++?
+- How do `reinterpret_cast`, `static_cast`, `dynamic_cast`, and `const_cast` differ?
+- When is each cast acceptable, and when is it a design smell?
+- What is RTTI, and how does `dynamic_cast` work?
+- Which alternatives to runtime polymorphism and RTTI exist?
+- What are copy elision, RVO, and NRVO?
+- Why is returning an object by value often efficient?
+- What is a move-only type?
+- How do you design a move-only resource type?
+- What is the pimpl idiom, and which ABI problems does it solve?
+- What is a header-only library, and what are its pros and cons?
+- What is a C++20 module, and how does it differ from a header?
+- Which problems of the include-based model do C++ modules solve?
+- How does CMake describe a target, library, and dependency?
+- Why is `target_link_libraries` better than global include paths?
+- What are static and shared libraries in C++?
+- Which ABI risks arise when distributing a C++ library?
+- Why is mixing different standard libraries or compiler ABIs difficult?
+- What is name mangling?
+- Why does a C++ API sometimes export a C ABI?
+- What is FFI, and how does C++ interoperate with C, Rust, Python, or the JVM?
+- How should errors be handled at a C++ and C API boundary?
+- What is a data race in C++?
+- How does `std::thread` differ from `std::jthread`?
+- Why is `std::jthread` safer for cancellation and shutdown?
+- How do mutex, `lock_guard`, `unique_lock`, and `scoped_lock` work?
+- How does `lock_guard` differ from `unique_lock`?
+- How can deadlock be avoided while acquiring several mutexes?
+- What is a condition variable, and how should a predicate be waited for?
+- Why can a condition variable have a spurious wakeup?
+- What is an atomic type?
+- Which memory orders exist in C++ atomics?
+- How do relaxed, acquire/release, and sequential consistency differ?
+- What is a lock-free algorithm, and why is lock-free not always faster?
+- How do `std::async`, future, and promise work?
+- What are the problems with `std::async`, and when is an explicit task system needed?
+- What is a C++20 coroutine?
+- How does a coroutine differ from a thread?
+- Which lifetime risks occur with coroutines and awaitable objects?
+- How do you profile a C++ program?
+- How does profile-guided optimization differ from a microbenchmark?
+- Why is premature optimization dangerous while measurement is still necessary?
+- Which sanitizers and static analyzers should be enabled in C++ CI?
+- How are AddressSanitizer, UBSan, TSan, and fuzzing used in a C++ project?
+- How do you test code involving time, threads, and a filesystem?
+- Which C++ ecosystem libraries are useful for testing, formatting, and logging?
+- When should Boost be chosen, and when is the standard library enough?
+- Which risks come with header-only and template-heavy dependencies?
+- How do you keep incremental builds fast in a large C++ project?
+- How would you explain C++ trade-offs: zero-cost abstractions, language complexity, and the cost of mistakes?
+- How do you select an abstraction level in a high-performance C++ service?
+- Which C++ bugs most often appear only in production?
+- How do you conduct a modern C++ code review?
+- How do you gradually migrate legacy C++ toward modern idioms?
+- When is Rust, Go, Java, or C a better choice than C++?
+- Which C++ trade-offs should be reviewed before starting a new high-performance service?
+- How do you choose between GoogleTest, Catch2, and doctest, and how do you avoid making C++ unit tests copies of the implementation?
+- What are the benefits and risks of Boost, and when is the standard library or a narrower dependency better for a product?
+- When should you use `{fmt}` and spdlog, and how do formatting and synchronous logging affect critical-path latency?
+- How do CMake together with Conan or vcpkg manage dependencies, and how do you ensure reproducible builds across platforms?
+- When is Qt justified for a C++ application, and when do its size, signals/slots model, and licensing change the decision?
+- How do you enable AddressSanitizer, UndefinedBehaviorSanitizer, and ThreadSanitizer in CI, and why should their findings not be ignored?
+
+### 4.11 C# and .NET
+- What are C# and .NET, and which problems are they used for?
+- How do .NET, the CLR, and the runtime relate to one another?
+- How do .NET Framework, .NET Core, and modern .NET differ?
+- What is a solution, project, assembly, and NuGet package?
+- What are the roles of the C# compiler, IL, JIT, and AOT?
+- What are C# value types and reference types?
+- How do `class`, `struct`, `record`, and `record struct` differ?
+- What are `var`, `object`, and `dynamic`?
+- What is nullable reference type analysis?
+- How do `string`, `StringBuilder`, and spans differ?
+- What are `const`, `readonly`, and `static readonly`?
+- How do fields, properties, auto-properties, and indexers differ?
+- What are primary constructors and object initializers?
+- What is a constructor, and what is a static constructor?
+- What does `required` mean for a property?
+- What are named and optional parameters?
+- What are `ref`, `out`, and `in` parameters?
+- How does passing by reference differ from returning a reference?
+- What are `ref struct` and `Span<T>`?
+- Why are spans restricted in async and heap-allocated scenarios?
+- What are interfaces and abstract classes?
+- How do implementation and inheritance differ?
+- What are virtual, override, sealed, and new members?
+- What is polymorphism in C#?
+- What is explicit interface implementation?
+- What are extension methods?
+- What are delegates, `Action`, `Func`, and events?
+- How do events differ from callbacks?
+- What is a lambda expression?
+- What are closures, and which lifetime risks do they have?
+- What are anonymous types and tuples?
+- What are records and value equality?
+- How should `Equals` and `GetHashCode` be implemented?
+- What are generic types and methods?
+- What are generic constraints?
+- How do covariance and contravariance work?
+- What are nullable value types?
+- How do `?.`, `??`, `??=`, and `!` work?
+- What are pattern matching and switch expressions?
+- How do type, property, relational, and list patterns work?
+- What are exception filters?
+- How do `try`, `catch`, `finally`, and `throw` work?
+- When should exceptions be used instead of result types?
+- What is a custom exception, and when is it appropriate?
+- Why should exceptions not be used for ordinary control flow?
+- What are arrays, `List<T>`, `Dictionary<TKey,TValue>`, and `HashSet<T>`?
+- How do `IEnumerable<T>`, `ICollection<T>`, `IList<T>`, and `IReadOnlyList<T>` differ?
+- What is deferred execution in LINQ?
+- How do `Select`, `Where`, `GroupBy`, `Join`, `Any`, and `All` work?
+- What is the difference between `First`, `Single`, and their `OrDefault` versions?
+- Why can multiple enumeration of `IEnumerable<T>` be expensive or unsafe?
+- How do LINQ to Objects and LINQ providers differ?
+- What is `IQueryable<T>`, and why must its expressions be reviewed?
+- Which LINQ constructs can cause inefficient SQL in EF Core?
+- What is iterator block syntax with `yield return`?
+- What is `IDisposable`?
+- How do `using`, `using declaration`, and `await using` work?
+- Why is `Dispose` required for unmanaged resources?
+- What is a finalizer, and why should it be rare?
+- How does the .NET garbage collector work?
+- What are generations 0, 1, and 2?
+- What is the large object heap?
+- What are GC roots and memory leaks in managed applications?
+- How do object retention and a real native-resource leak differ?
+- How do you profile memory and allocations in .NET?
+- What are boxing and unboxing?
+- Why can boxing create hidden allocations?
+- What are `async` and `await`?
+- What do `Task`, `Task<T>`, `ValueTask`, and `void` mean in async APIs?
+- When is `ValueTask` appropriate?
+- What is the async state machine?
+- Why can `.Result` and `.Wait()` cause deadlocks or thread blocking?
+- What is `ConfigureAwait`, and where does it matter?
+- How are exceptions propagated through tasks?
+- How do `Task.WhenAll` and `Task.WhenAny` differ?
+- How is cancellation modeled with `CancellationToken`?
+- How should cancellation be propagated through an API?
+- What are timeout, cancellation, and retry, and why are they different?
+- What is `IAsyncEnumerable<T>`?
+- How does `await foreach` work?
+- What are channels, and when are they useful?
+- What is `Parallel.ForEachAsync`, and when is it unsafe to overuse?
+- What are threads, the thread pool, and `Task.Run`?
+- When is `Task.Run` inappropriate in an ASP.NET Core request?
+- What are `lock`, `Monitor`, and `Mutex`?
+- How do `SemaphoreSlim`, `ReaderWriterLockSlim`, and `Interlocked` differ?
+- What are race conditions, deadlocks, and thread-pool starvation?
+- How do `volatile` and memory barriers work in C#?
+- What are `ConcurrentDictionary` and other concurrent collections?
+- How do `System.Threading.Channels` support backpressure?
+- What is dependency injection in .NET?
+- What are transient, scoped, and singleton lifetimes?
+- Which bugs arise from injecting a scoped service into a singleton?
+- How do you design a composition root?
+- What are configuration providers and the Options pattern?
+- How do `IOptions`, `IOptionsSnapshot`, and `IOptionsMonitor` differ?
+- How should secrets be loaded in a .NET application?
+- What are structured logs, and why use `ILogger`?
+- How do log scopes and correlation IDs work?
+- What are OpenTelemetry traces, metrics, and logs?
+- What is ASP.NET Core middleware?
+- How is a middleware pipeline ordered?
+- How do routing, endpoint filters, controllers, and minimal APIs differ?
+- What are model binding and model validation?
+- How do data annotations and FluentValidation differ?
+- What are HTTP status codes and Problem Details?
+- How should global exception handling be organized?
+- What is authentication versus authorization?
+- What are claims, roles, policies, and authentication schemes?
+- How do JWT access tokens work?
+- Which JWT validation mistakes are security vulnerabilities?
+- What are cookies, CSRF, CORS, and SameSite?
+- What is rate limiting middleware?
+- How do health checks, readiness, and liveness endpoints differ?
+- What is Entity Framework Core?
+- How do `DbContext`, `DbSet`, and change tracking work?
+- What are migrations, and how should they be deployed?
+- How does eager loading differ from explicit and lazy loading?
+- What is the N+1 query problem?
+- When should `AsNoTracking` be used?
+- What are transactions and optimistic concurrency in EF Core?
+- How do concurrency tokens and row versions work?
+- When is Dapper or raw SQL preferable to EF Core?
+- How should database connections be managed?
+- What is `HttpClientFactory`, and why not create HttpClient per request?
+- How do named and typed HTTP clients differ?
+- How should retries, circuit breakers, and timeouts be configured?
+- What is an idempotency key for an HTTP endpoint?
+- How do you implement background work with `IHostedService`?
+- What is the difference between a hosted service and a queue worker?
+- How should graceful shutdown be implemented?
+- How do you handle poison messages and retries in a consumer?
+- What is serialization in `System.Text.Json`?
+- How do source generation and reflection-based serialization differ?
+- How do DTOs differ from domain entities?
+- What are versioning strategies for a public Web API?
+- How do you prevent over-posting and IDOR in an API?
+- What are unit, integration, and end-to-end tests in .NET?
+- How do xUnit, NUnit, and MSTest differ?
+- How do mocking and fakes differ?
+- How do you test time, randomness, and external HTTP calls?
+- What are test containers, and why are they useful?
+- What is a solution-wide code style policy?
+- How do analyzers, Roslyn, and code fixes help a team?
+- What are nullable warnings, and why should they be addressed?
+- How do `dotnet format` and EditorConfig help CI?
+- What is NuGet dependency resolution?
+- How do you manage vulnerable or conflicting packages?
+- What is semantic versioning for a .NET library?
+- What is binary compatibility in a public .NET API?
+- How do assemblies, strong names, and binding work?
+- What is reflection, and when is it justified?
+- What are source generators, and which risks do they introduce?
+- How does native interop through P/Invoke work?
+- What are marshaling and ABI concerns in P/Invoke?
+- How does unsafe C# differ from ordinary managed code?
+- When are `unsafe`, pointers, and fixed buffers justified?
+- What are NativeAOT and trimming?
+- Why can reflection break trimming?
+- How do you reduce startup time and memory use in a .NET service?
+- How do you diagnose high CPU in a .NET process?
+- How do you diagnose high allocation rate and GC pauses?
+- How do you diagnose thread-pool starvation?
+- Which metrics are mandatory for a production .NET service?
+- How do you distinguish CPU saturation, lock contention, and slow external I/O?
+- How do you perform a performance review before release?
+- What are common C# and .NET anti-patterns in production?
+- How do you migrate a legacy .NET Framework service to modern .NET?
+- Which trade-offs should be considered when selecting C# and .NET for a new service?
+- Which C# and .NET topics should a senior engineer explain confidently in an interview?
+- What are expression trees, and how are they used by LINQ providers?
+- What is `IServiceProvider`, and why should service-location be avoided in application code?
+- How do endpoint routing and conventional routing differ?
+- How do filters differ from middleware in ASP.NET Core?
+- What are action filters, resource filters, and exception filters?
+- How do minimal APIs organize validation and authorization?
+- What is content negotiation in an HTTP API?
+- How do streaming responses reduce memory consumption?
+- How do gRPC and REST differ in a .NET service?
+- How are protobuf contracts versioned safely?
+- What are distributed caching and `IDistributedCache`?
+- How do memory cache and distributed cache differ?
+- How do cache stampedes occur, and how can they be prevented?
+- What is a transactional outbox, and how can .NET implement it?
+- How do message deduplication and idempotent consumers work?
+- What are `Activity` and `ActivitySource` in distributed tracing?
+- How do you propagate trace context across HTTP and message queues?
+- What are `dotnet-counters`, `dotnet-trace`, and `dotnet-dump` used for?
+- How do you capture and analyze a production memory dump safely?
+- What does tiered compilation mean in modern .NET?
+- How can ReadyToRun and PGO affect startup and throughput?
+- What is a `ref readonly` return, and when is it valuable?
+- How do `ReadOnlySpan<T>` and `Memory<T>` differ?
+- What is `ArrayPool<T>`, and which ownership rules does it require?
+- How do you avoid retaining pooled arrays accidentally?
+- What is `System.IO.Pipelines`, and when is it useful?
+- How do you implement bounded concurrency for I/O-heavy work?
+- How do you ensure a retry does not amplify an outage?
+- How do you make configuration changes observable and reversible?
+- Which release checks protect a high-load .NET service from regression?
+- When does Entity Framework Core speed up development, and when do Dapper or explicit SQL make queries and performance more predictable?
+- How do you apply FluentValidation at an API boundary without duplicating domain invariants in every handler?
+- How does MediatR help separate commands and queries, and when does it merely add needless layers and indirection?
+- How do Serilog, OpenTelemetry, and ASP.NET Core logging connect into one observability practice?
+- When are MassTransit or NServiceBus useful for messaging, and which guarantees must still be implemented by application code?
+- How do you use built-in resilience handlers or Polly for timeouts, retries, and circuit breakers without creating a retry storm?
+
+### 4.12 PHP
+- What is PHP, and what is it used for today?
+- How does PHP differ from JavaScript on the backend?
+- Which modern PHP versions should a developer know?
+- What happens when a web server handles a PHP request?
+- How do PHP-FPM, mod_php, and the CLI SAPI differ?
+- What is a PHP script, and how is it executed?
+- How are variables declared in PHP?
+- What are scalar types in PHP?
+- How do `int`, `float`, `string`, and `bool` behave?
+- What is the difference between loose and strict comparison?
+- How do `==` and `===` differ?
+- What are type juggling and implicit conversion?
+- Why can type juggling create application bugs?
+- What does `declare(strict_types=1)` do?
+- What are nullable, union, and intersection types?
+- What are `mixed`, `never`, and `void`?
+- How do type declarations for parameters and return values work?
+- What are constants, and how do `const` and `define` differ?
+- How do single-quoted and double-quoted strings differ?
+- What are heredoc and nowdoc?
+- How does string interpolation work?
+- How do arrays work in PHP?
+- Why is a PHP array both an ordered map and a list?
+- How do indexed and associative arrays differ?
+- What are `array_map`, `array_filter`, and `array_reduce`?
+- How do `foreach`, `for`, `while`, and `do-while` differ?
+- What is a reference in PHP?
+- Which risks arise when using `foreach` by reference?
+- What are functions and closures?
+- How do anonymous functions and arrow functions differ?
+- How do closures capture values with `use`?
+- What are variadic functions and argument unpacking?
+- What are named arguments, and which compatibility risks do they create?
+- What are default parameter values?
+- How do exceptions work in PHP?
+- How do `try`, `catch`, `finally`, and `throw` work?
+- How do `Exception`, `Error`, and `Throwable` differ?
+- When should a custom exception be created?
+- What are namespaces, and why are they important?
+- How do `use` imports and aliases work?
+- What are classes and objects in PHP?
+- What are properties, methods, and constructors?
+- How do public, protected, and private visibility differ?
+- What are typed properties?
+- What is property promotion in a constructor?
+- What are readonly properties and readonly classes?
+- What are static properties and methods?
+- How do inheritance and composition differ?
+- What are abstract classes and interfaces?
+- How do `extends` and `implements` differ?
+- What are traits, and when are they appropriate?
+- Which problems can overuse of traits cause?
+- What are magic methods such as `__get`, `__set`, and `__call`?
+- Why can magic methods hide design problems?
+- What are `__construct`, `__destruct`, `__clone`, and `__toString`?
+- How does object cloning work?
+- What are enums in modern PHP?
+- How do backed enums differ from unit enums?
+- What are attributes, and how do they replace some annotation patterns?
+- What are anonymous classes?
+- What is late static binding?
+- How do `self`, `static`, and `parent` differ?
+- What are `final` classes and methods?
+- What is covariance and contravariance in PHP?
+- How do generators work with `yield`?
+- When is a generator preferable to building a full array?
+- What are iterators and `Traversable`?
+- What are `IteratorAggregate` and `Generator`?
+- What is SPL, and which collection utilities does it provide?
+- What are Composer and Packagist?
+- What is `composer.json`?
+- What is `composer.lock`, and why should it be committed?
+- How does Composer autoloading work?
+- What are PSR-0 and PSR-4 autoloading?
+- What are semantic version constraints in Composer?
+- How should vulnerable PHP dependencies be handled?
+- What are PSR coding standards?
+- What are PSR-3, PSR-6, PSR-7, PSR-11, PSR-12, and PSR-15?
+- What is PSR-7, and how are HTTP messages modeled?
+- What is middleware in a PHP application?
+- What is dependency injection?
+- What are constructor injection and service location?
+- What are a DI container's benefits and risks?
+- How should application configuration be organized?
+- Why should secrets not be committed to a PHP repository?
+- How should environment variables be used safely?
+- What is the request lifecycle in a traditional PHP application?
+- How does PHP-FPM process management work?
+- What are `pm`, `pm.max_children`, and worker exhaustion?
+- How do you diagnose slow PHP-FPM requests?
+- What is OPcache, and why is it essential in production?
+- How do OPcache invalidation and deployment interact?
+- What are APCu and Redis used for?
+- How do local cache and distributed cache differ?
+- What is cache stampede, and how can it be prevented?
+- How do sessions work in PHP?
+- Where can PHP sessions be stored?
+- What are the security risks of session fixation and session hijacking?
+- How should cookies be configured with Secure, HttpOnly, and SameSite?
+- What are CSRF and XSS?
+- How do you prevent XSS in server-rendered PHP?
+- Why is output escaping context-dependent?
+- How do prepared statements prevent SQL injection?
+- Why is string concatenation unsafe for SQL queries?
+- What are PDO and mysqli, and how do they differ?
+- How should transactions be used from PHP?
+- What are isolation levels and deadlocks?
+- How do you design retry behavior for a database deadlock?
+- What is an ORM?
+- How do Doctrine ORM and Eloquent differ conceptually?
+- What are the N+1 query problem and eager loading?
+- When is raw SQL preferable to an ORM?
+- What are migrations, and how should they be deployed?
+- What is a database connection pool, and how does PHP-FPM affect it?
+- How do you build a REST API in PHP?
+- What are routing, controllers, request validation, and DTOs?
+- How should validation errors be represented in an API?
+- How do authentication and authorization differ?
+- How do password hashing and `password_hash` work?
+- Why should passwords never be encrypted reversibly?
+- How do JWTs work, and which validation checks are essential?
+- When are cookie sessions better than JWTs?
+- What are OAuth 2.0 and OpenID Connect in a PHP service?
+- What is rate limiting, and where should it be applied?
+- What are CORS and preflight requests?
+- How do you upload files safely in PHP?
+- Which checks are required before accepting an uploaded file?
+- Why must an uploaded filename not be trusted?
+- How do you serve large downloads efficiently?
+- What are queues and background jobs?
+- How do Laravel queues, Symfony Messenger, and a cron worker differ?
+- What is an idempotent job?
+- How should retries, backoff, and dead-letter handling be designed?
+- What is a transactional outbox?
+- How do scheduled tasks and cron work with PHP applications?
+- What are Laravel and Symfony?
+- How do their architectures differ?
+- What are a service provider and service container in Laravel?
+- What are Symfony bundles, services, and autowiring?
+- What are Eloquent models and Doctrine entities?
+- How do MVC, hexagonal architecture, and CQRS apply to PHP?
+- How do you separate domain logic from framework code?
+- What are DTOs, value objects, and entities?
+- How do you serialize JSON safely?
+- Why must input JSON be validated independently of its syntax?
+- How do you implement API versioning?
+- What are PHPUnit and Pest?
+- How do unit, integration, and functional tests differ?
+- How do you mock time, HTTP, and external services in PHP tests?
+- What are fixtures and factories?
+- How do you test database code without brittle shared state?
+- What are static analysis tools PHPStan and Psalm?
+- How do strictness levels in PHPStan help a team?
+- What are PHP_CodeSniffer, PHP CS Fixer, and Rector used for?
+- How does Rector help modernize legacy PHP safely?
+- What is Xdebug, and how is it used for debugging?
+- How do you profile PHP with Xdebug, Blackfire, or Tideways?
+- What commonly causes high CPU or memory usage in PHP?
+- How do you find an accidental O(n²) loop in PHP code?
+- How do you stream a large response without exhausting memory?
+- What are fibers in PHP?
+- How do fibers relate to asynchronous PHP runtimes?
+- What are ReactPHP, Amp, and Swoole?
+- When is an async PHP runtime useful, and which operational trade-offs does it add?
+- How does long-running PHP differ from request-per-process PHP?
+- Which global state bugs appear in long-running workers?
+- What is serialization, and which risks arise when unserializing untrusted data?
+- Why is `unserialize` dangerous with untrusted input?
+- How do you prevent command injection in PHP?
+- Why should shell commands be avoided or passed through safe argument APIs?
+- What are file inclusion vulnerabilities?
+- How do you prevent path traversal?
+- What are SSRF and open redirect vulnerabilities?
+- How should errors be logged without exposing sensitive data?
+- How do structured logs and correlation IDs help PHP services?
+- What are metrics, tracing, and health checks?
+- How do you make a PHP deployment zero-downtime?
+- What are blue-green and rolling deployments?
+- How should database migrations be coordinated with application releases?
+- What is backward-compatible schema evolution?
+- How do you handle feature flags in a PHP service?
+- How do you design an idempotent HTTP endpoint?
+- How do you prevent duplicate payments or messages?
+- What are common PHP performance myths?
+- When should a PHP application be split into services, and when should it not?
+- How do you conduct a production code review for PHP?
+- Which PHP anti-patterns most often lead to incidents?
+- Which PHP and framework topics should a senior backend engineer explain in an interview?
+- How do opcode caches differ from application caches?
+- How do you invalidate cached data without serving inconsistent results?
+- What is a read/write split, and which consistency issues does it introduce?
+- How can a PHP consumer be made safe to restart during deployment?
+- How do you measure queue lag and worker throughput?
+- How do you protect a PHP endpoint from abusive payload sizes?
+- What is request smuggling, and which proxy settings matter for it?
+- How do you model money and decimal values safely in PHP?
+- Why are floating-point values unsuitable for currency calculations?
+- How do you implement distributed locks carefully with Redis?
+- Which contracts should a reusable PHP package expose and test?
+- How do you evolve a public PHP API without breaking consumers?
+- When does Laravel accelerate development, and when does Symfony offer a more explicit architecture and control over components?
+- How do you choose between Eloquent and Doctrine, considering Active Record, Data Mapper, complex queries, and domain-model boundaries?
+- How do PHPUnit and Pest help build PHP application tests, and where does Pest’s convenient DSL not replace good test cases?
+- How do you use Guzzle or Symfony HttpClient with timeouts, retries, middleware, and safe handling of external HTTP errors?
+- How do Laravel Queue, Symfony Messenger, and Redis/RabbitMQ fit together, and how do you ensure an idempotent handler?
+- How do Monolog and OpenTelemetry help investigate a PHP incident without writing secrets or personal data to logs?
+
+### 4.13 Rust
+- What is Rust, and what problems is it designed to solve?
+- Which types of systems are a good fit for Rust?
+- How does Rust differ from C++, Go, and Java?
+- What are `rustc`, Cargo, crates.io, and rustup?
+- How is a Rust project organized?
+- What are `Cargo.toml` and `Cargo.lock` for?
+- What are a crate, package, module, and workspace?
+- How do `use`, `mod`, `pub`, and `crate` work?
+- What are Rust's scalar and compound types?
+- How do `let`, `mut`, shadowing, and constants differ?
+- What are tuples, arrays, slices, and vectors?
+- How does `String` differ from `&str`?
+- Why is UTF-8 string indexing restricted?
+- How should a string be iterated by bytes, chars, or grapheme clusters?
+- What are ownership and move semantics in Rust?
+- What makes a type `Copy`?
+- How does cloning differ from copying?
+- What is borrowing?
+- What are immutable and mutable references?
+- Why may there be many immutable references or one mutable reference?
+- What is a lifetime?
+- When are explicit lifetime annotations required?
+- What are lifetime elision rules?
+- What is the lifetime of a temporary?
+- What is a dangling reference, and how does Rust prevent it?
+- What is non-lexical lifetime analysis?
+- What are structs and enums?
+- How do tuple structs and unit structs differ?
+- What are methods and associated functions?
+- What is an `impl` block?
+- What are pattern matching and `match`?
+- Why must a match over an enum be exhaustive?
+- What are `if let`, `while let`, and `let else`?
+- What are `Option` and `Result`?
+- How do `unwrap`, `expect`, `?`, `map`, and `and_then` differ?
+- When is `panic!` appropriate, and when is `Result` better?
+- How do custom error types work?
+- What are `thiserror` and `anyhow` used for?
+- What are traits?
+- How do trait bounds and `where` clauses work?
+- What is a blanket implementation?
+- What are default trait methods?
+- How do `impl Trait`, generics, and `dyn Trait` differ?
+- What is static dispatch versus dynamic dispatch?
+- What is object safety?
+- What are associated types and associated constants?
+- What are generic functions, structs, and enums?
+- What are `Sized`, `?Sized`, and dynamically sized types?
+- What are closures, and how do they capture values?
+- How do `Fn`, `FnMut`, and `FnOnce` differ?
+- What are iterators?
+- How do `map`, `filter`, `fold`, `collect`, and `flat_map` work?
+- What is lazy evaluation in iterator chains?
+- How do iterator adapters differ from consumers?
+- What are `Vec`, `VecDeque`, `HashMap`, `BTreeMap`, `HashSet`, and `BTreeSet`?
+- How do `HashMap` and `BTreeMap` differ?
+- What is the entry API?
+- What are slices and zero-copy APIs?
+- What are `Box`, `Rc`, and `Arc`?
+- How do `Rc` and `Arc` differ?
+- What are `RefCell`, `Cell`, `Mutex`, and `RwLock`?
+- What is interior mutability?
+- What are runtime borrow checks, and when do they panic?
+- What are weak references, and how do they prevent reference cycles?
+- What are smart pointers and the `Deref` trait?
+- What are `Drop` and deterministic resource cleanup?
+- How does RAII work in Rust?
+- What are macros in Rust?
+- How do declarative macros differ from procedural macros?
+- What are derive macros and attributes?
+- What are visibility rules in Rust modules?
+- What are integration and unit tests in Rust?
+- How do `#[test]`, `#[should_panic]`, and test modules work?
+- What are documentation tests?
+- What are benchmarks and criterion?
+- How does Rust compile code in debug and release profiles?
+- What do `cargo check`, `cargo build`, `cargo test`, `cargo clippy`, and `cargo fmt` do?
+- Why should Clippy warnings be reviewed rather than blindly silenced?
+- What is `rustfmt` and how is it enforced in CI?
+- What are feature flags in Cargo?
+- How do optional dependencies and feature unification work?
+- What are semver compatibility rules for a Rust library?
+- How do you audit and update Cargo dependencies?
+- What are unsafe Rust and an unsafe block?
+- Which operations require `unsafe`?
+- What are unsafe functions, traits, and implementations?
+- What is an unsafe invariant?
+- How should unsafe code be isolated and documented?
+- What is undefined behavior in Rust?
+- How do raw pointers differ from references?
+- What are FFI and `extern "C"`?
+- How do Rust and C exchange strings and ownership across FFI?
+- What are ABI, `repr(C)`, and layout guarantees?
+- What are `Send` and `Sync`?
+- Why do they matter for concurrency?
+- How do threads work through `std::thread`?
+- How do channels work in Rust?
+- What are `mpsc`, bounded channels, and backpressure?
+- How do mutex poisoning and lock recovery work?
+- What are atomics and memory orderings?
+- How do relaxed, acquire/release, and sequentially consistent orderings differ?
+- What is a data race, and why is it prevented in safe Rust?
+- What are async functions and futures?
+- Why does calling an async function not execute it immediately?
+- What is an async runtime?
+- How do Tokio and async-std differ?
+- What are `await`, tasks, and executors?
+- How do `spawn`, `JoinHandle`, and cancellation work in Tokio?
+- What is cooperative scheduling?
+- Why must blocking work not run on an async executor worker?
+- How do `spawn_blocking` and dedicated pools help?
+- What are `Send` futures and non-Send futures?
+- What is pinning?
+- What are `Pin`, `Unpin`, and self-referential futures?
+- What are streams in Rust?
+- How do async streams differ from iterators?
+- How should timeouts, retries, and cancellation be designed?
+- What is structured concurrency, and how can task leaks be avoided?
+- How does error propagation work in async Rust?
+- What is a trait object in async code?
+- How do `async_trait` and native async traits differ?
+- What are serialization and deserialization with Serde?
+- How do `Serialize`, `Deserialize`, and custom serializers work?
+- How should untrusted JSON input be validated?
+- What are Axum, Actix Web, Rocket, and Warp?
+- How do routers, extractors, handlers, and middleware work in Axum?
+- How should an HTTP API model errors in Rust?
+- How do authentication, authorization, and request validation fit into a Rust service?
+- What are SQLx, Diesel, and SeaORM?
+- How do compile-time and runtime SQL checking differ?
+- What are database transactions and connection pools?
+- How do you prevent N+1 queries in a Rust backend?
+- What are Tokio's async I/O primitives?
+- How do `AsyncRead` and `AsyncWrite` differ from synchronous I/O?
+- What are bytes buffers and zero-copy networking?
+- How do you implement graceful shutdown in a Tokio service?
+- How do signals and cancellation tokens interact?
+- What are tracing and structured logging in Rust?
+- How do `tracing`, spans, and OpenTelemetry work?
+- Which metrics should a production Rust service expose?
+- How do you profile CPU and allocations in Rust?
+- What are flamegraphs and perf?
+- How do you find lock contention or blocking in an async service?
+- What is a memory leak in Rust despite ownership?
+- How can reference cycles and intentional leaks occur?
+- What are arena allocation and bump allocators?
+- When is a custom allocator justified?
+- How do lifetimes help design a zero-copy parser?
+- What is a self-referential data structure, and why is it difficult?
+- How do `Cow`, `Borrow`, and `AsRef` support flexible APIs?
+- How do `From`, `Into`, `TryFrom`, and `TryInto` differ?
+- What are `AsRef`, `AsMut`, `Deref`, and `Borrow` for?
+- What is the orphan rule?
+- What is a newtype pattern, and how does it solve coherence limits?
+- What are coherence and specialization limitations?
+- How do you model a state machine with enums?
+- What are typestate and phantom types?
+- When do advanced type-level techniques improve or hurt maintainability?
+- What is a `repr(transparent)` wrapper?
+- What is `MaybeUninit`, and why is it unsafe-sensitive?
+- How do you avoid unnecessary cloning in Rust APIs?
+- How do you choose between borrowing and owning parameters?
+- What makes a public Rust API ergonomic?
+- How do you maintain backward compatibility in a public crate?
+- What is a breaking change for an enum, trait, or struct?
+- How do you use `#[non_exhaustive]` safely?
+- What are cargo workspaces and shared dependency management?
+- How do you build reproducible Rust releases?
+- What are cross compilation and target triples?
+- How do you build for WASM or embedded targets?
+- What are WASM and `wasm-bindgen`?
+- How does Rust interoperate with JavaScript in WebAssembly?
+- What are no_std and alloc?
+- When is Rust appropriate for embedded development?
+- How do embedded Rust ownership rules interact with interrupts?
+- What is an embedded HAL?
+- How do you fuzz a Rust parser or protocol implementation?
+- What are property-based tests and proptest?
+- How do you test concurrent and async code deterministically?
+- What are loom and model checking for concurrency?
+- How do you review an unsafe Rust change?
+- Which invariants should be tested around FFI boundaries?
+- How do you diagnose a production panic?
+- How do panic strategy abort and unwind differ?
+- How do you reduce binary size and startup time?
+- What are LTO, stripping, and profile-guided optimization?
+- When does Rust's zero-cost abstraction claim have practical limits?
+- What are common Rust anti-patterns in production?
+- When is Rust a poor choice despite its safety guarantees?
+- Which Rust topics should a senior systems or backend engineer explain in an interview?
+- How do you choose between a mutex, channel, and actor-like task design?
+- How do you prevent retry storms in an async Rust client?
+- How do you safely rotate secrets and connections in a long-running Rust service?
+- What is a circuit breaker, and where should it live in a Rust service?
+- How do you evolve a serialized event schema without breaking consumers?
+- How do you set resource limits for a Rust worker handling untrusted input?
+- How do you investigate latency regressions after a Rust compiler upgrade?
+- Which telemetry distinguishes allocator pressure from application-level buffering?
+- How do you decide whether an unsafe optimization is worth its maintenance cost?
+- Which architectural trade-offs matter before selecting Rust for a new product?
+- How do you choose between Tokio, async-std, and threaded Rust code, and why should an async runtime not be added without understanding the workload?
+- When are Axum, Actix Web, or Rocket appropriate for an HTTP service, and how do you compare them by ecosystem, middleware, and error model?
+- How does Serde help build serialization contracts, and which risks remain when handling untrusted data?
+- When do you choose SQLx, Diesel, or SeaORM, considering compile-time query checking, migrations, and SQL control?
+- How do tracing, metrics, and OpenTelemetry fit together in a Rust service, and which context must travel through async tasks?
+- How do Cargo, cargo-deny, Clippy, and audit help manage dependencies and Rust-project quality in CI?
+
+### 4.14 Swift
+- What is Swift, and which platforms is it used for?
+- How does Swift differ from Objective-C?
+- What are Swift's main safety and performance goals?
+- What are Xcode, Swift Package Manager, and CocoaPods?
+- How is a Swift package organized?
+- What are modules, targets, products, and dependencies in SwiftPM?
+- What are variables, constants, and type inference in Swift?
+- How do `let` and `var` differ?
+- What are Swift's basic value types?
+- How do `Int`, `Double`, `Bool`, `String`, and Character differ?
+- What are tuples and type aliases?
+- What are arrays, sets, and dictionaries?
+- How does `Array` differ from `ArraySlice`?
+- How do collection value semantics work?
+- What is copy-on-write?
+- When can copy-on-write still create a costly copy?
+- What are optionals?
+- How do `Optional`, `?`, `!`, `??`, and optional chaining work?
+- When is an implicitly unwrapped optional justified?
+- How do `if let`, `guard let`, and nil coalescing differ?
+- Why does `guard` often improve control flow?
+- What are functions and external parameter labels?
+- How do argument labels improve an API?
+- What are default and variadic parameters?
+- What are `inout` parameters?
+- How do value types behave when passed to an `inout` parameter?
+- What are closures?
+- How do trailing closure syntax and multiple trailing closures work?
+- What are escaping and non-escaping closures?
+- Why must `self` be explicit in an escaping closure?
+- What are capture lists?
+- How do `[weak self]` and `[unowned self]` differ?
+- What is a retain cycle?
+- How do you diagnose and fix a retain cycle?
+- What are structures, classes, and enumerations?
+- How do value semantics differ from reference semantics?
+- When should a type be a struct rather than a class?
+- What are initializers and memberwise initialization?
+- What are designated and convenience initializers?
+- How does two-phase initialization work?
+- What are deinitializers?
+- What are properties and property observers?
+- How do stored, computed, lazy, and type properties differ?
+- What are property wrappers?
+- How does `@propertyWrapper` support reusable state behavior?
+- What are methods, mutating methods, and type methods?
+- What are subscripts?
+- What are protocols?
+- How do protocols differ from abstract base classes?
+- What are protocol requirements and default implementations?
+- What are protocol extensions?
+- What is protocol-oriented programming?
+- When can protocol extensions cause surprising dispatch?
+- What are associated types?
+- What are opaque types and `some Protocol`?
+- How does `some` differ from `any`?
+- What are existential types, and what overhead can they have?
+- What are generics and generic constraints?
+- What are `where` clauses?
+- What are conditional conformances?
+- What are `Equatable`, `Hashable`, `Comparable`, and `Codable`?
+- How do `==` and `===` differ?
+- How do value equality and identity differ?
+- What are raw-value and associated-value enums?
+- How do `switch` and pattern matching work?
+- Why must a switch over an enum be exhaustive?
+- What are `if case` and `guard case`?
+- What are access-control levels in Swift?
+- How do `open`, `public`, `internal`, `fileprivate`, and `private` differ?
+- What are extensions, and when should they be used?
+- What are inheritance and overriding?
+- Why does Swift favor composition over inheritance?
+- What are `final` classes and methods?
+- What are `static` and `class` members?
+- What are error handling and `throws`?
+- How do `try`, `try?`, `try!`, and `rethrows` differ?
+- When should `Result` be used instead of `throws`?
+- What is `Never`?
+- What are assertions and preconditions?
+- What is ARC?
+- How do strong, weak, and unowned references differ?
+- What are memory graph debugging and Instruments?
+- What is a memory leak in a Swift application?
+- What are `autoreleasepool` and Objective-C bridging?
+- How does Swift bridge `String`, arrays, and dictionaries to Foundation?
+- What are `Any` and `AnyObject`?
+- What are `as`, `as?`, and `as!`?
+- What are dynamic casting and type checks?
+- What are `@objc`, `dynamic`, and Objective-C interoperability?
+- When is `@objc` necessary?
+- What are Key-Value Coding and Key-Value Observing?
+- What are Swift concurrency and structured concurrency?
+- What is an async function?
+- How do `async`, `await`, and `throws` work together?
+- What are `Task` and `TaskGroup`?
+- How do `async let` and task groups differ?
+- What is task cancellation?
+- How should a task check and react to cancellation?
+- What are actors?
+- How do actors prevent data races?
+- What is actor isolation?
+- What is `@MainActor`?
+- When should UI work be isolated to the main actor?
+- What are `nonisolated` and `isolated` parameters?
+- What are `Sendable` and strict concurrency checking?
+- What is a data race, and how does Swift help prevent it?
+- How do `Task.detached` and a child Task differ?
+- Why is detached work often harder to manage?
+- What are continuations?
+- How do checked continuations bridge callback APIs to async/await?
+- Which continuation mistakes cause hangs or double resumes?
+- What is AsyncSequence?
+- How does `for await` work?
+- What are Combine and reactive streams?
+- How do Combine and native async sequences differ?
+- What are `Publisher`, `Subscriber`, and `AnyCancellable`?
+- How does backpressure work in Combine?
+- What are URLSession and HTTP networking in Swift?
+- How do you model a network response and an API error?
+- How do you implement timeout, retry, and cancellation for a request?
+- What is `Codable`?
+- How do `Encodable` and `Decodable` work?
+- When is manual Codable implementation required?
+- How do custom date and key decoding strategies work?
+- How do you validate untrusted server data?
+- What are SwiftUI and UIKit?
+- How do declarative and imperative UI programming differ?
+- What are View, body, and value semantics in SwiftUI?
+- What are `@State`, `@Binding`, `@StateObject`, and `@ObservedObject`?
+- What are `@Environment` and `@EnvironmentObject`?
+- How do SwiftUI view identity and diffing work?
+- Why can an incorrect identity cause UI-state bugs?
+- What are `ForEach` identifiers and stable IDs?
+- How do navigation and dependency injection work in SwiftUI?
+- What is the Observable macro, and how does it differ from ObservableObject?
+- How does UIKit view-controller lifecycle work?
+- How do Auto Layout constraints work?
+- What are reusable cells and diffable data sources?
+- How do you avoid image-loading race conditions in a scrolling list?
+- What are Core Data and SwiftData?
+- How do persistent models, contexts, and migrations work?
+- What are actors and thread confinement in persistence code?
+- What are Core Animation and rendering performance?
+- How do you find dropped frames and long main-thread work?
+- What are Instruments Time Profiler and Allocations?
+- How do you profile application startup?
+- What are XCTest and XCUITest?
+- How do unit, UI, and integration tests differ on Apple platforms?
+- How do you test async code and actors?
+- How do you mock URLSession and persistence in tests?
+- What are snapshot tests, and what are their limits?
+- How do you organize a feature module in an iOS app?
+- What are MVVM, Clean Architecture, and the Coordinator pattern?
+- How do you avoid massive view controllers or massive SwiftUI views?
+- How do you manage dependencies and build settings in a large Xcode project?
+- What are XCFrameworks and binary dependencies?
+- How do you version a public Swift library?
+- What are ABI stability and module stability?
+- What is resilience in a Swift library API?
+- What are `@inlinable` and `@usableFromInline`?
+- How do you reduce an iOS app's binary size?
+- What are dead-code stripping and app thinning?
+- How do you handle feature flags and remote configuration safely?
+- How should secrets be managed in a mobile client?
+- Why can a mobile app never securely keep a backend secret?
+- What are keychain, Secure Enclave, and app transport security?
+- How do you protect an app against insecure local storage?
+- What are certificate pinning and its operational trade-offs?
+- How do you implement analytics without exposing personal data?
+- What are accessibility requirements in SwiftUI and UIKit?
+- How do Dynamic Type, VoiceOver, and localization affect UI design?
+- How do you localize plural rules and right-to-left layouts?
+- What is app lifecycle handling for background and foreground states?
+- How do background tasks and push notifications work?
+- How do you ensure a background operation is restartable?
+- How do you diagnose crashes from crash reports and symbolication?
+- What are common Swift performance anti-patterns?
+- How do you avoid unnecessary copying and allocation in Swift?
+- What are common Swift concurrency anti-patterns?
+- How do you review a Swift change for thread safety, memory safety, and UI correctness?
+- When is Swift not the right choice for a product or subsystem?
+- Which Swift topics should a senior iOS engineer explain in an interview?
+- How do you coordinate a backend schema change with a released mobile app?
+- How do you make an offline write queue idempotent and observable?
+- How do you resolve a conflict between local and server state?
+- Which metrics reveal a SwiftUI rendering regression?
+- How do you choose a cancellation policy for an image or search request?
+- How do you protect an API client from retry storms on mobile networks?
+- How do you build a testable boundary around platform services?
+- How do you design a package API to avoid leaking UIKit or SwiftUI types?
+- How do you migrate a callback-heavy codebase to Swift Concurrency incrementally?
+- How do you enforce Sendable correctness in a legacy module?
+- How do you safely share immutable data across actors?
+- How do you investigate a production-only retain cycle?
+- What are the trade-offs of using an actor for a high-throughput cache?
+- How do you establish error-taxonomy rules across a large Swift application?
+- How do you keep a modular app's build time under control?
+- Which release gates protect an iOS application from regressions?
+- How do you make a Swift service client backward compatible across API versions?
+- Which architecture decision should be revisited before a major Swift application scales?
+- How do Swift `some` and `any` affect binary size and dynamic dispatch?
+- How do opaque return types preserve API flexibility?
+- How do you make an actor-backed cache observable without defeating isolation?
+- How do you model a partial success from several concurrent network operations?
+- How do you safely bridge a delegate API that can emit events after cancellation?
+- How do you keep a `Task` from outliving a screen that started it?
+- How do you prevent a background actor from accidentally publishing UI state?
+- How do you choose between `@MainActor` isolation and explicit main-queue dispatch?
+- How do you test a task group when one child fails early?
+- How do you keep JSON decoding errors actionable without logging user data?
+- How do you serialize writes to a local store from several features?
+- How do you make migrations resilient to an application termination halfway through?
+- How do you protect an offline cache from stale authorization state?
+- How do you decide which failures are eligible for automatic retry on mobile?
+- How do you trace a request through an app, an API gateway, and a backend service?
+- How do you preserve accessibility identifiers without coupling tests to layout?
+- How do you identify an expensive SwiftUI body recomputation?
+- How do you choose stable identity for mutable server-backed collections?
+- How do you prevent excessive view invalidation from a shared observable object?
+- How do you establish performance budgets for launch, scrolling, and networking?
+- How do you isolate platform-specific code in a cross-platform Swift package?
+- How do you roll out a risky client-side feature and stop it remotely?
+- How do you turn a production crash signature into a reproducible test case?
+- When should you choose SwiftUI instead of UIKit, and how do you combine them without duplicating navigation and lifecycle logic?
+- How do Combine, async/await, and Observation relate, and when does a reactive chain become more complex than direct asynchronous code?
+- How does Alamofire differ from URLSession, and when is an extra HTTP library justified in an iOS project?
+- How do Kingfisher or Nuke handle image loading and caching, and which memory and request-cancellation constraints matter?
+- How do you use XCTest, XCUITest, and snapshot testing without turning UI tests into unstable pixel checks?
+- How do you choose Swift Package Manager, CocoaPods, or Carthage and provide controlled upgrades of iOS dependencies?
+
+### 4.15 Kotlin
+- What is Kotlin, and where is it used?
+- How does Kotlin differ from Java?
+- Which platforms can Kotlin target?
+- What are Kotlin/JVM, Kotlin/Native, Kotlin/JS, and Kotlin Multiplatform?
+- What are Kotlin compiler, Gradle, and the standard library?
+- How is a Kotlin project organized?
+- What are packages, imports, and visibility modifiers?
+- How do `val` and `var` differ?
+- What are type inference and explicit types?
+- What are Kotlin's basic types?
+- How do `Int`, `Long`, `Double`, `Boolean`, and `String` behave?
+- How does Kotlin handle primitive types on the JVM?
+- What are nullable types?
+- How do `String` and `String?` differ?
+- How do `?.`, `?:`, `!!`, and safe casts work?
+- Why should `!!` be avoided in production code?
+- What are smart casts?
+- When do smart casts not work?
+- What are `if`, `when`, loops, and ranges?
+- Why is `when` useful with sealed classes?
+- What are functions, expression bodies, and default arguments?
+- What are named and vararg parameters?
+- What are lambdas and higher-order functions?
+- What are inline functions?
+- What are `noinline` and `crossinline`?
+- What are reified type parameters?
+- Why do reified parameters require inline functions?
+- What are extension functions and extension properties?
+- How do extensions differ from members at dispatch time?
+- What are classes, constructors, and init blocks?
+- What are primary and secondary constructors?
+- What are properties, custom getters, and setters?
+- What are data classes?
+- How do `copy`, destructuring, and generated equality work in a data class?
+- When is a data class a poor domain-model choice?
+- What are objects and companion objects?
+- How do object declarations differ from singleton services?
+- What are interfaces and abstract classes?
+- What are inheritance, overriding, and `open`?
+- Why are Kotlin classes final by default?
+- What are delegation and the `by` keyword?
+- What are sealed classes and sealed interfaces?
+- How do enum classes differ from sealed hierarchies?
+- What are value classes?
+- How do value classes affect runtime representation and API design?
+- What are type aliases?
+- What are generics and type constraints?
+- What are declaration-site variance and use-site variance?
+- How do `out`, `in`, and invariant types differ?
+- What are star projections?
+- What is type erasure on the JVM?
+- What are collections in Kotlin?
+- How do read-only and mutable collections differ?
+- How do List, Set, and Map differ?
+- What are sequences?
+- How do sequences differ from collection operations?
+- When do lazy sequences improve or hurt performance?
+- What are `map`, `filter`, `fold`, `reduce`, and `flatMap`?
+- How do `let`, `run`, `with`, `apply`, and `also` differ?
+- Which scope-function misuse hurts readability?
+- What are destructuring declarations?
+- What are operator overloading and conventions?
+- Which operators can be overloaded?
+- What are exceptions in Kotlin?
+- How does Kotlin differ from Java in checked exceptions?
+- How do `try`, `catch`, and `finally` work as expressions?
+- When should `Result` or a sealed error type be used?
+- What are annotations?
+- What are annotation targets and retention?
+- What is reflection in Kotlin?
+- When should Kotlin reflection be avoided?
+- What are delegated properties?
+- How do `lazy`, `observable`, and custom delegates work?
+- What are `lateinit` and `lazy`, and how do they differ?
+- What are JVM interop annotations?
+- What do `@JvmStatic`, `@JvmOverloads`, and `@JvmField` do?
+- How does Kotlin call Java code safely?
+- What are platform types?
+- How do Java nullability annotations affect Kotlin?
+- How do SAM conversions work?
+- What are coroutines?
+- How do coroutines differ from threads?
+- What are `suspend` functions?
+- Why does a suspend function not necessarily run in the background?
+- What are coroutine builders `launch`, `async`, and `runBlocking`?
+- How do `launch` and `async` differ?
+- Why is `runBlocking` dangerous in application paths?
+- What are `CoroutineScope` and `CoroutineContext`?
+- What are dispatchers and how do Default, IO, Main, and Unconfined differ?
+- What is structured concurrency?
+- How do parent and child jobs interact?
+- What are `Job`, `SupervisorJob`, and supervisorScope?
+- How do cancellation and cooperative cancellation work?
+- How should a suspend function react to cancellation?
+- What are `withContext`, `coroutineScope`, and `supervisorScope`?
+- How do exceptions propagate from coroutines?
+- What are `Flow`, StateFlow, and SharedFlow?
+- How does Flow differ from a suspend function?
+- What are cold and hot streams?
+- How do `map`, `filter`, `catch`, `flowOn`, and `collect` work in Flow?
+- How do backpressure and buffering work in Flow?
+- What are channels, and how do they differ from Flow?
+- How do you avoid leaking a coroutine scope?
+- What are testing dispatchers and virtual time?
+- How do you test coroutines and Flow deterministically?
+- What are Kotlin serialization and `@Serializable`?
+- How do Kotlinx Serialization, Jackson, and Gson differ?
+- How should untrusted JSON input be validated?
+- What are Ktor and Spring Boot with Kotlin?
+- How do Ktor routing, plugins, and call handling work?
+- How does Spring's Kotlin support differ from Java usage?
+- What are dependency injection and constructor injection in Kotlin?
+- What are Spring, Koin, and Dagger/Hilt?
+- Which trade-offs exist between reflection and generated DI?
+- What are JPA and Hibernate pitfalls with Kotlin?
+- Why are final classes and no-arg constructors relevant for JPA?
+- What are Exposed and jOOQ alternatives?
+- How do transactions and connection pools work?
+- How do you prevent N+1 queries?
+- What are HTTP client and server timeouts?
+- How do retry, cancellation, and idempotency interact in a Kotlin service?
+- What are structured logs, metrics, and traces?
+- How do you propagate correlation context through coroutines?
+- What are Android, Jetpack Compose, and XML views?
+- How do declarative Compose UI and traditional views differ?
+- What are composable functions?
+- What are state, recomposition, and remember in Compose?
+- How do `remember`, `rememberSaveable`, and ViewModel differ?
+- What are StateFlow and lifecycle-aware collection in Android?
+- How do you avoid collecting a Flow after a screen is stopped?
+- What are Android lifecycle, configuration changes, and process death?
+- How do you model navigation and screen state?
+- What are Room, DataStore, and WorkManager?
+- How do you handle offline-first synchronization?
+- What are Kotlin Multiplatform expect and actual declarations?
+- How do shared domain code and platform UI code differ?
+- What are native memory and concurrency considerations in KMP?
+- What are unit, integration, and UI tests in Kotlin?
+- What are JUnit, Kotest, MockK, and Turbine?
+- How do you mock suspend functions and flows?
+- What are Gradle build logic and convention plugins?
+- How do you manage dependency versions with version catalogs?
+- What are incremental compilation and build-cache issues?
+- How do you reduce a large Kotlin project's build time?
+- What are Detekt and ktlint?
+- How do static analysis and formatting work in CI?
+- What are binary compatibility and API validation for Kotlin libraries?
+- How do you publish a Kotlin library safely?
+- What are semver and source versus binary compatibility?
+- How do Kotlin inline functions affect binary compatibility?
+- What are JVM garbage collection and allocation concerns?
+- How do you diagnose high allocation rate in a Kotlin service?
+- What are JVM thread dumps and coroutine dumps?
+- How do you diagnose a coroutine deadlock or starvation?
+- What are blocking calls in a coroutine application?
+- How do you isolate CPU-bound and I/O-bound work?
+- What are common Kotlin performance anti-patterns?
+- How do boxing, allocations, and collection chains affect performance?
+- What are security concerns in a Kotlin backend?
+- How do you protect API endpoints from injection, IDOR, and mass assignment?
+- How do you implement authentication and authorization safely?
+- How do you manage secrets and configuration?
+- How do you implement graceful shutdown in a Kotlin service?
+- What are health checks, readiness, and liveness?
+- How do you make a message consumer idempotent?
+- What are transactional outbox and retry policies?
+- How do you design feature flags and backward-compatible deployments?
+- How do you conduct a Kotlin code review?
+- Which Kotlin anti-patterns cause production incidents?
+- When is Kotlin a poor language choice?
+- Which Kotlin topics should a senior Android or backend engineer explain in an interview?
+- How do you design a stable Kotlin error model across module boundaries?
+- How do you map a database error without leaking infrastructure concerns into a domain layer?
+- How do you protect a coroutine-based client from retry storms?
+- How do you set concurrency limits for a Flow processing pipeline?
+- How do you ensure a Flow collector is cancelled with its owner?
+- How do you choose between Channel, SharedFlow, and a queue broker?
+- How do you prevent lost events during an Android configuration change?
+- How do you maintain state consistency between Compose and a ViewModel?
+- How do you profile a slow Compose recomposition?
+- How do you prevent an unstable collection from invalidating a large Compose tree?
+- How do you migrate callback APIs to suspend functions safely?
+- How do you wrap a callback that may call back more than once?
+- How do you make a Ktor route's error responses consistent?
+- How do you choose transaction boundaries in a coroutine-based service?
+- How do you keep a JPA persistence context out of a long-lived coroutine?
+- How do you manage connection-pool capacity with high coroutine concurrency?
+- How do you investigate a production memory leak caused by global coroutine scopes?
+- How do you use JVM Flight Recorder for a Kotlin service?
+- How do you distinguish a slow dispatcher from an exhausted external dependency?
+- How do you define observability conventions for coroutine names and traces?
+- How do you rotate credentials without restarting every dependent component unsafely?
+- How do you version serialized Kotlin events for multiple consumers?
+- How do you handle a partial failure in a fan-out coroutine workflow?
+- How do you preserve compatibility while refactoring a public sealed hierarchy?
+- How do you evaluate a KMP module's platform abstraction cost?
+- How do you set release gates for a Kotlin Android application?
+- How do you set release gates for a Kotlin backend service?
+- Which architecture trade-offs matter before adopting Kotlin at scale?
+- How do you keep Kotlin conventions consistent across a multi-team monorepo?
+- How do coroutines and Flow change Kotlin-code architecture, and which cancellation and structured-concurrency mistakes are most dangerous?
+- When should you choose Ktor instead of Spring Boot, and what trade-offs come with a lighter Kotlin backend framework?
+- How do Retrofit, OkHttp, and Kotlin serialization form a networking layer, and where must timeouts, retries, and errors be controlled explicitly?
+- How can Compose and classic Android Views coexist, and which state-management risks arise during migration?
+- When should you use Room, Exposed, or jOOQ for data in a Kotlin project, and how do you avoid hiding important SQL decisions?
+- How do you choose Hilt/Dagger, Koin, or manual DI, considering compile-time verification, build speed, and graph transparency?
+
+### 4.16 Lua
+- What is Lua, and where is it commonly used?
+- Why is Lua popular as an embedded scripting language?
+- How does Lua differ from Python and JavaScript?
+- What are the main Lua versions and LuaJIT?
+- How is a Lua program executed?
+- What are the Lua interpreter and standard library?
+- How are local and global variables declared?
+- Why should most Lua variables be local?
+- How do `nil`, `false`, and truthiness work?
+- Which values are false in Lua?
+- What are Lua's basic types?
+- How do numbers work in Lua?
+- How do strings work in Lua?
+- What are single-line and multiline strings?
+- How does concatenation work?
+- What are tables?
+- Why are tables the central data structure in Lua?
+- How can a table represent an array, map, object, or set?
+- How do array indexes work in Lua?
+- Why do Lua arrays conventionally start at one?
+- What happens with holes in an array-like table?
+- What is the length operator `#`, and when is it unreliable?
+- How do `pairs` and `ipairs` differ?
+- How do numeric and generic `for` loops work?
+- How do `while` and `repeat until` differ?
+- How do `break` and `goto` work in Lua?
+- What are functions and first-class functions?
+- How are local functions declared?
+- What are anonymous functions and closures?
+- How do closures capture upvalues?
+- What are multiple return values?
+- How do assignment and argument lists handle multiple returns?
+- What are varargs and `...`?
+- How do colon and dot method calls differ?
+- What is `self` in Lua?
+- How do modules and `require` work?
+- What are `package.path` and `package.cpath`?
+- What are LuaRocks and a rockspec?
+- How do you version and lock Lua dependencies?
+- What are metatables?
+- What are `getmetatable` and `setmetatable`?
+- What is the `__index` metamethod?
+- How can `__index` implement inheritance-like lookup?
+- What are `__newindex`, `__call`, and `__tostring`?
+- Which arithmetic and comparison metamethods exist?
+- How do metamethods affect performance and debuggability?
+- What is prototype-based object design in Lua?
+- How do classes get emulated in Lua?
+- When are simple tables preferable to a class framework?
+- What are weak tables?
+- How do weak keys, weak values, and ephemerons differ?
+- When are weak tables useful for caches?
+- What are coroutines?
+- How do `coroutine.create`, `resume`, `yield`, and `status` work?
+- How do Lua coroutines differ from operating-system threads?
+- What are coroutine scheduling and cooperative multitasking?
+- What happens when a coroutine yields across a protected call?
+- How do you design a coroutine-based producer-consumer pipeline?
+- What are error handling and `error` in Lua?
+- How do `pcall` and `xpcall` differ?
+- How do stack traces and `debug.traceback` help diagnose errors?
+- Why should the debug library be restricted in production?
+- What is garbage collection in Lua?
+- How does incremental garbage collection work?
+- What is generational garbage collection?
+- Which GC parameters can be tuned?
+- How do you find memory retention in a Lua application?
+- What are userdata and light userdata?
+- How do full userdata and light userdata differ?
+- What are the Lua C API and a Lua state?
+- How do you push and retrieve values through the Lua stack?
+- Why must C API stack discipline be strict?
+- How do Lua C functions report errors?
+- How do you register a C library for Lua?
+- What are metamethods for userdata?
+- How do you manage lifetime across Lua and C?
+- What are LuaJIT and its trace compiler?
+- How does LuaJIT differ from standard Lua?
+- Which language features affect LuaJIT compatibility?
+- What is FFI in LuaJIT?
+- How does LuaJIT FFI compare with the Lua C API?
+- Which safety risks arise from FFI?
+- What are Nginx and OpenResty?
+- How is Lua used in Nginx request processing?
+- What are ngx_lua phases?
+- Why must blocking I/O be avoided in OpenResty handlers?
+- How do cosockets work?
+- How do shared dictionaries and worker processes interact?
+- What are Redis and database client patterns in OpenResty?
+- How do you prevent cache stampede in Lua/OpenResty?
+- What are Kong and Envoy Lua filters?
+- How is Lua used for game scripting?
+- How do update loops and frame budgets affect Lua code?
+- How do you avoid allocation spikes in a game loop?
+- What are Roblox Luau and its differences from Lua?
+- What is Love2D?
+- How does Lua embed into a host application?
+- How do you expose host objects without leaking unsafe capabilities?
+- What is a sandboxed Lua environment?
+- Why is loading untrusted Lua code dangerous?
+- How do `load`, `loadfile`, and `dofile` differ?
+- How do you restrict an environment passed to `load`?
+- Why is `loadstring` or `load` unsafe for user input?
+- How do you set execution and memory limits for untrusted scripts?
+- How do you prevent an infinite loop in a Lua sandbox?
+- What are instruction hooks and their limitations?
+- How do you prevent path traversal in scripts that access files?
+- How do you prevent command injection from Lua code?
+- How should a Lua application log errors and context?
+- What are structured logs and correlation IDs in an embedded Lua system?
+- How do you expose metrics from a Lua worker?
+- How do you profile CPU use in Lua?
+- What are Lua profiler tools and sampling strategies?
+- How do you benchmark Lua code correctly?
+- What are table allocation and string concatenation performance pitfalls?
+- How can `table.concat` reduce string-allocation cost?
+- When are local references to global functions a useful optimization?
+- Why can micro-optimization make Lua code harder to maintain?
+- How do you design a configuration format in Lua?
+- What are the advantages and risks of executable configuration?
+- How do you validate a configuration table?
+- How do you serialize data in Lua?
+- How do JSON libraries differ in behavior and performance?
+- How do you distinguish absent, null, and false values during JSON mapping?
+- What are Busted and LuaUnit?
+- How do unit, integration, and host-application tests differ for Lua?
+- How do you mock time, files, and host APIs in Lua tests?
+- What are static analysis tools for Lua?
+- What are luacheck, selene, and stylua?
+- How do you enforce Lua style and linting in CI?
+- What are EmmyLua and Lua Language Server annotations?
+- How do you document type expectations in a dynamic Lua codebase?
+- What are gradual typing approaches such as Teal?
+- When is Teal worth adding to a Lua project?
+- What are Lua's lexical scoping rules?
+- How do upvalues create accidental shared state?
+- What are tail calls?
+- When does Lua guarantee tail-call optimization?
+- What are recursion limits and iterative alternatives?
+- How do tables use hashing internally?
+- Why can table iteration order not be assumed?
+- How do you implement a deterministic serialization order?
+- What are floating-point and integer portability concerns across Lua versions?
+- How do bitwise operations differ between Lua versions and LuaJIT?
+- What are `bit32` and LuaJIT's bit library?
+- How do you design binary protocol parsing safely in Lua?
+- How do you validate lengths before slicing binary input?
+- How do you handle UTF-8 in Lua?
+- Why are byte length and character length different?
+- What is `utf8` library support, and what are its limitations?
+- How do you write an HTTP client safely in Lua?
+- How should timeout, retry, and idempotency be designed?
+- How do you prevent retry storms in an OpenResty service?
+- How do you manage connection reuse and pooling?
+- What are worker lifecycle and graceful reload in Nginx/OpenResty?
+- How do you deploy Lua scripts without mixed-version behavior?
+- How do you make a Lua-based routing rule backward compatible?
+- What is feature-flag evaluation in Lua?
+- How do you validate and roll back a new script safely?
+- What are common Lua code-review concerns?
+- Which Lua anti-patterns cause production incidents?
+- When is Lua the wrong choice for a subsystem?
+- How do you choose between Lua, JavaScript, Python, and a compiled extension?
+- How do you isolate a crash-prone native module from a Lua host?
+- How do you investigate a memory leak involving Lua and C references?
+- How do you inspect a stuck coroutine or request handler?
+- How do you preserve request context across yielded operations?
+- How do you model cancellation in cooperative Lua code?
+- How do you limit fan-out and concurrency in a Lua request path?
+- How do you make a Lua queue consumer idempotent?
+- How do you handle poison messages and retries?
+- How do you audit a Lua sandbox before allowing third-party scripts?
+- How do you evolve a public Lua module without breaking callers?
+- Which compatibility promises should a Lua library document?
+- How do you package Lua code for multiple operating systems?
+- How do you handle native-module ABI compatibility?
+- How do you cross-compile a Lua host and modules?
+- What are reproducible builds for Lua dependencies?
+- How do you set observability standards for a Lua integration layer?
+- Which metrics reveal a LuaJIT deoptimization or GC regression?
+- How do you decide whether to rewrite a hot Lua path in C or Rust?
+- Which Lua topics should a senior platform or game engineer explain in an interview?
+- How do you avoid retaining a large host object through a closure upvalue?
+- How do you choose a cache key and eviction policy for a Lua-side cache?
+- How do you stop a script from observing secrets it does not need?
+- How do you model permissions for host functions exposed to scripts?
+- How do you test a sandbox escape attempt?
+- How do you make scripted business rules reproducible for an audit?
+- How do you version rule inputs and outputs safely?
+- How do you separate deterministic logic from time and random sources?
+- How do you investigate a latency regression caused by metamethod dispatch?
+- How do you avoid global namespace collisions across independently authored modules?
+- How do you establish error conventions for an embedded Lua API?
+- How do you decide whether a script error should fail open or fail closed?
+- How do you carry a deadline through nested coroutine operations?
+- How do you prevent an embedded script from exhausting host-file descriptors?
+- How do you ensure reload does not discard critical in-memory state unexpectedly?
+- How do you safely migrate persisted Lua table data between versions?
+- How do you define SLOs for a Lua-powered gateway component?
+- Which architecture trade-offs should be reviewed before using Lua at scale?
+- When does LuaJIT provide an advantage over standard Lua, and which compatibility, debugging, and memory constraints must be considered?
+- How do OpenResty and ngx_lua run Lua inside Nginx, and which tasks should not be moved into the request path?
+- How does LuaRocks manage dependencies, and how do you pin versions and native dependencies for reproducible delivery?
+- How do Busted and luacheck help test Lua code, and which cases need testing in the real embedded runtime?
+- When should you use Penlight, lpeg, or other utility libraries, and when do they make a simple Lua script opaque?
+- How do you design a safe Lua plugin API so the host library controls access to the file system, network, and resources?
+
+### 4.17 Assembly
+- What is assembly language, and when is it used?
+- How does assembly differ from machine code?
+- What are an ISA, CPU architecture, and microarchitecture?
+- How do x86-64 and ARM64 differ at a high level?
+- What are an assembler, linker, and loader?
+- What are source, object, executable, and shared-library files?
+- What are instructions, operands, labels, and directives?
+- What are registers, and why are they fast?
+- What are general-purpose, floating-point, SIMD, and special-purpose registers?
+- What are the instruction pointer, stack pointer, and frame pointer?
+- What are condition flags?
+- How do arithmetic instructions affect flags?
+- What are immediate, register, and memory operands?
+- What are addressing modes?
+- How do base-plus-offset and indexed addressing work?
+- What is endianness?
+- How do little-endian and big-endian representations differ?
+- What are bytes, words, doublewords, and quadwords?
+- What are signed and unsigned integer representations?
+- How does two's complement work?
+- How do signed and unsigned comparison instructions differ?
+- What are overflow and carry flags?
+- How do shifts and rotates work?
+- What are bit masks and bit-test instructions?
+- How do logical instructions differ from arithmetic ones?
+- What are control-flow instructions?
+- How do conditional and unconditional branches work?
+- What are calls and returns?
+- How does a stack work?
+- What are stack frames?
+- What are function prologue and epilogue?
+- What are calling conventions?
+- Why must caller and callee agree on a calling convention?
+- What are caller-saved and callee-saved registers?
+- How are function arguments and return values passed on x86-64 System V?
+- How does the Windows x64 calling convention differ?
+- How are arguments passed under AArch64 ABI?
+- What is stack alignment, and why is it required?
+- What is the red zone on System V x86-64?
+- What is shadow space on Windows x64?
+- What are leaf and non-leaf functions?
+- How do recursion and stack growth work?
+- What causes stack overflow?
+- What are local variables at assembly level?
+- How are arrays and structures addressed?
+- How do structure padding and alignment affect offsets?
+- What are relocations?
+- What are symbols and symbol tables?
+- How do local, global, weak, and undefined symbols differ?
+- What are ELF, Mach-O, and PE formats?
+- What are code, data, BSS, rodata, and relocation sections?
+- What are static and dynamic linking?
+- How do PLT and GOT work on ELF systems?
+- What are position-independent code and position-independent executables?
+- Why is PIC important for shared libraries and ASLR?
+- What are ASLR, NX, and stack canaries?
+- What is a buffer overflow at assembly level?
+- How does a return-oriented programming attack work conceptually?
+- What are stack-smashing defenses?
+- What are syscalls?
+- How does a system call differ from an ordinary function call?
+- How are syscall numbers and arguments passed?
+- What happens on a transition from user mode to kernel mode?
+- What are privilege rings or exception levels?
+- What are interrupts, exceptions, and traps?
+- How do page faults occur?
+- What are virtual addresses and page tables?
+- What are TLB and page-walk costs?
+- What are cache lines, cache levels, and cache misses?
+- How do spatial and temporal locality affect assembly performance?
+- What are pipelines and instruction-level parallelism?
+- What are branch prediction and branch misprediction?
+- What are out-of-order execution and speculative execution?
+- How can dependencies limit instruction throughput?
+- What are latency and throughput of an instruction?
+- What are data, control, and structural hazards?
+- What are instruction scheduling and register pressure?
+- What are SIMD and vector instructions?
+- How do SSE, AVX, AVX2, and AVX-512 differ?
+- How do NEON and SVE relate to ARM?
+- What are vector lanes and alignment requirements?
+- When is manual SIMD beneficial?
+- Why can manual SIMD be slower than compiler-generated code?
+- What are floating-point registers and IEEE 754 basics?
+- What are NaN, infinity, signed zero, and denormal numbers?
+- How do rounding modes affect numerical code?
+- What are x87 and SSE floating-point differences?
+- How do integer and floating-point ABI rules differ?
+- What are atomic instructions?
+- How do compare-and-swap and fetch-add work?
+- What are memory barriers and fences?
+- How do acquire, release, and sequential consistency map to hardware?
+- What is a data race at machine level?
+- What are cache coherence and false sharing?
+- How can lock contention be recognized in a profiler?
+- What are spinlocks and when are they appropriate?
+- What are lock-free algorithms and ABA problem?
+- How do compiler optimizations change generated assembly?
+- What do optimization levels mean?
+- Why can undefined behavior produce surprising assembly?
+- How do inlining and tail-call optimization work?
+- What are constant folding and dead-code elimination?
+- What are loop unrolling and vectorization?
+- Why might a compiler refuse to vectorize a loop?
+- What are alias analysis and `restrict`?
+- How do volatile accesses differ from atomic accesses?
+- What is inline assembly?
+- When is inline assembly justified?
+- Why is inline assembly fragile across compilers and targets?
+- What are clobber lists and constraints in GCC-style inline assembly?
+- How do you call C from an assembly function?
+- How do you call an assembly routine from C, Rust, or C++?
+- What are name mangling and C linkage?
+- How do you pass a structure across an FFI boundary?
+- Why does ABI compatibility matter more than source compatibility here?
+- What are varargs ABI rules?
+- How do you write an assembly function that preserves required registers?
+- How do you return a 128-bit integer or a floating-point value?
+- What are unwind information and stack unwinding?
+- Why are correct frame metadata required for exceptions and debuggers?
+- What are DWARF debug information and line tables?
+- How do you assemble code with NASM, GAS, MASM, or clang?
+- How do Intel and AT&T syntax differ?
+- What are `.text`, `.data`, `.bss`, and `.rodata` directives?
+- How do you inspect an object file with `objdump`, `readelf`, or `nm`?
+- How do you inspect a Mach-O or PE binary?
+- How do you disassemble a function?
+- How do you relate disassembly to source and debug symbols?
+- What are breakpoints and single stepping in a debugger?
+- How do you inspect registers and memory in GDB or LLDB?
+- How do you debug a segmentation fault from registers and a stack trace?
+- What does an invalid instruction fault indicate?
+- How do you find an ABI mismatch using disassembly?
+- What are core dumps and minidumps?
+- How do you profile native code with perf, Instruments, or VTune?
+- What are sampling and instrumentation profiling?
+- How do you avoid misleading microbenchmarks?
+- What are warm-up, cache effects, and frequency scaling in benchmarks?
+- How do you measure branch misses and cache misses?
+- What is a performance counter?
+- What are compiler explorer and godbolt useful for?
+- How do you verify that a critical source change generated expected assembly?
+- What are a bootloader and bare-metal startup code?
+- How does reset vector execution begin?
+- What are linker scripts?
+- How do you place code and data at fixed addresses?
+- What are memory-mapped I/O registers?
+- How do volatile and barriers apply to device registers?
+- What are interrupts and interrupt service routines?
+- Why must an ISR be short and reentrant when required?
+- What are DMA and cache coherency concerns?
+- How do embedded startup code and C runtime initialization interact?
+- What is assembly in an operating-system kernel?
+- How do context switch and saving registers work?
+- What are privilege transitions and syscall entry stubs?
+- What are security mitigations such as retpolines and CET?
+- How do Spectre and Meltdown relate to speculation?
+- What is constant-time code?
+- Why is constant-time behavior important in cryptography?
+- How do branches and table lookups leak timing information?
+- What are stack alignment and red-zone risks in signal handlers?
+- How do you write a safe hand-optimized memcpy or checksum routine?
+- Why should optimized assembly have a portable fallback?
+- How do you test assembly routines against reference implementations?
+- How do you fuzz an assembly-facing parser or codec?
+- How do you use sanitizers when a project includes assembly?
+- Which bugs are invisible to a language-level memory checker?
+- How do you review an assembly patch?
+- Which invariants should be documented beside an assembly routine?
+- How do you design assembly code for multiple CPU feature levels?
+- How do CPUID and runtime feature detection work?
+- How do you dispatch between scalar and vector implementations safely?
+- How do you keep a generated assembly listing reproducible in CI?
+- How do you validate code on real hardware as well as emulators?
+- What are QEMU and hardware-in-the-loop testing useful for?
+- How do you cross-compile and debug an assembly target remotely?
+- How do you package an assembly library for several platforms?
+- How do you maintain ABI compatibility when changing an assembly routine?
+- How do you avoid relying on undocumented CPU behavior?
+- What are microcode updates and why can they change performance?
+- How do you distinguish a compiler issue from a CPU issue?
+- When should an optimization be written in intrinsics instead of assembly?
+- When should assembly be replaced with C, C++, Rust, or a library call?
+- What are common assembly anti-patterns in production?
+- Which assembly topics should a senior systems engineer explain in an interview?
+- How do you determine whether a regression is caused by instruction-cache pressure?
+- How do you reason about memory ordering when porting assembly between x86 and ARM?
+- How do you verify a hand-written atomic primitive under contention?
+- How do you make an assembly routine safe for an asynchronous signal context?
+- How do you ensure a new vector path does not read past an input buffer?
+- How do you test alignment-sensitive code on all supported architectures?
+- How do you protect a JIT or assembly generator from emitting unsafe code?
+- How do you design a stable C ABI around a performance-critical assembly kernel?
+- How do you investigate a crash that occurs only with optimized native code?
+- How do you set up release validation for an assembly-heavy library?
+- Which telemetry can demonstrate a cache-locality improvement in production?
+- How do you decide that a micro-optimization is too complex to maintain?
+- How do you audit an assembly boundary handling untrusted input?
+- How do you choose a fallback for CPUs without the required instruction extension?
+- Which architecture trade-offs should be evaluated before adding assembly to a product?
+- How do you verify that a compiler barrier is sufficient for a device-register write?
+- How do you keep an assembly implementation compatible with sanitizer-instrumented callers?
+- How do you test an assembly function's behavior for every possible aliasing arrangement?
+- How do you determine whether a new CPU instruction helps on the actual production workload?
+- How do you document failure modes for a low-level routine used by many languages?
+- How do you choose NASM, MASM, or GAS, and why must assembler syntax and a platform ABI not be mixed without an explicit agreement?
+- How do you use GDB, LLDB, objdump, and Compiler Explorer to inspect machine code without drawing conclusions from only one disassembly fragment?
+- When are compiler intrinsics safer and more convenient than handwritten assembly, especially for SIMD and cryptographic instructions?
+- How do perf, VTune, or Instruments measure cache misses, branch mispredictions, and real bottlenecks in low-level code?
+- How do you connect an assembly module to C/C++ or Rust through FFI, and which tests are needed for ABI, alignment, and register preservation?
+- Why is an optimized library such as OpenSSL or BLAS usually safer than a handwritten assembly implementation, and how do you verify its use?
+
+### 4.18 Bash and Shell Scripting
+- What is a shell, and what role does Bash play on Unix-like systems?
+- How does Bash differ from shell in the generic sense?
+- How do you run a Bash script?
+- What is a shebang, and why is it used?
+- How does `#!/bin/bash` differ from `#!/usr/bin/env bash`?
+- When is Bash better than Python, Go, or another language?
+- Which tasks are a poor fit for Bash?
+- What does making a script executable with `chmod +x` do?
+- How does `bash script.sh` differ from `./script.sh`?
+- How do you determine the installed Bash version?
+- Why can Bash versions differ on macOS and Linux?
+- What is POSIX shell compatibility?
+- How do Bash, `sh`, `dash`, and `zsh` differ?
+- Why must `/bin/sh` not always be assumed to be Bash?
+- How do comments work in Bash?
+- Which variable naming rules apply in Bash?
+- How do you create and print a variable?
+- Why must there be no spaces around `=` in assignment?
+- How does a shell variable differ from an environment variable?
+- How do you export an environment variable?
+- How do single and double quotes differ?
+- Why should a variable usually be double-quoted?
+- What happens when an unquoted variable expands?
+- How do you escape a special character?
+- What is command substitution?
+- Why is `$(command)` preferred to backticks?
+- How do you store command output in a variable?
+- How do script arguments work?
+- What do `$0`, `$1`, `${10}`, `$#`, and `$?` mean?
+- How do `$*` and `$@` differ?
+- Why is `"$@"` usually the safe form?
+- How do you require a mandatory argument?
+- How do you read user input with `read`?
+- Why should `read -r` usually be used?
+- How do default values with parameter expansion work?
+- How do `${var:-x}` and `${var:=x}` differ?
+- How do you remove a string prefix or suffix through parameter expansion?
+- How do you replace part of a variable value?
+- How do you calculate a string length?
+- How do you slice a string?
+- How do arithmetic expressions work in Bash?
+- How do `$(( ))`, `(( ))`, and `let` differ?
+- What is a command exit status?
+- Why does zero mean success on Unix?
+- How do you exit a script with a code?
+- How do `if`, `elif`, and `else` work?
+- What are `test`, `[ ]`, and `[[ ]]`?
+- Why do spaces matter in `[ ]` conditions?
+- How do file tests `-f`, `-d`, `-e`, `-r`, `-w`, and `-x` work?
+- How do string and numeric comparisons differ?
+- How do `&&` and `||` control command execution?
+- When can `command1 && command2` hide an error?
+- What is `case`, and when is it useful?
+- How do `for`, `while`, and `until` loops differ?
+- Why is `for file in $(ls)` an error-prone pattern?
+- How do you read a file safely line by line?
+- Why can a pipeline before `while` create a subshell?
+- How do `break` and `continue` work?
+- What are globs?
+- How do `*`, `?`, and character classes work in globs?
+- What are `nullglob` and extended globs?
+- Why is a glob not a regular expression?
+- How do indexed arrays work?
+- How do associative arrays work?
+- Which Bash versions support associative arrays?
+- How do you define and call a function?
+- How do function arguments and return statuses work?
+- Why is `return` not for returning arbitrary text?
+- How can a function return text through stdout?
+- Why should function-local variables use `local`?
+- What are scope rules for Bash variables?
+- What do `source` and `.` do?
+- How does sourcing differ from executing a script?
+- How do you organize reusable Bash libraries?
+- How do stdin, stdout, and stderr differ?
+- Which file descriptors are 0, 1, and 2?
+- How do `>`, `>>`, and `<` redirections work?
+- How do you redirect stderr?
+- What does `2>&1` mean?
+- Why does redirection order matter?
+- What is `tee` used for?
+- What is a pipeline?
+- What exit status does a pipeline have by default?
+- Why is `set -o pipefail` useful?
+- What does `set -e` do, and why is it insufficient alone?
+- What does `set -u` do?
+- What does `set -euo pipefail` mean?
+- In which situations does `set -e` behave unexpectedly?
+- How do you temporarily handle an expected failure?
+- What does `set -x` do?
+- Why can xtrace leak secrets?
+- What does `set -v` do?
+- What is `trap`?
+- How do `EXIT`, `ERR`, `INT`, and `TERM` traps differ?
+- How do you clean temporary files reliably with a trap?
+- Why should a service script not ignore SIGTERM?
+- How do you stop child processes when a script is terminated?
+- What are PID, `$!`, background jobs, and `wait`?
+- How do process, job, subshell, and pipeline differ?
+- When does Bash create a subshell?
+- How do `( commands )` and `{ commands; }` differ?
+- What is process substitution?
+- How do here-document and here-string differ?
+- How do you disable expansion in a heredoc?
+- When is a heredoc useful for configuration generation?
+- Why is generating JSON manually with heredocs risky?
+- How do you use `jq` safely from Bash?
+- Why should JSON not be parsed with grep or sed?
+- How do you check that a command exists?
+- Why is `command -v` better than `which` in scripts?
+- How do you detect a dependency version?
+- How do you determine the script's directory reliably?
+- Why is `$PWD` not the script directory?
+- How do relative and absolute paths differ?
+- Why must paths be quoted?
+- How do you handle filenames containing spaces or newlines?
+- Why are `find -print0` and `xargs -0` useful?
+- How does `find -exec ... +` differ from xargs?
+- When can xargs be unsafe?
+- How do you find files by name, type, and modification time?
+- How do you implement a dry-run mode?
+- Which safeguards are needed before a mass delete?
+- Why is `rm -rf "$dir"/*` dangerous without validation?
+- How do `mktemp` and `umask` improve safety?
+- Why is a fixed name in `/tmp` a race condition?
+- How do permissions and file ownership matter in a script?
+- Which risks arise from `sudo` in automation?
+- How should secrets be passed to scripts?
+- Why have environment-variable secrets limitations?
+- What is shell injection?
+- How does unsafe interpolation create command injection?
+- Why should `eval` almost always be avoided?
+- How do argument arrays prevent word-splitting bugs?
+- How do `"${cmd[@]}"` and `"${cmd[*]}"` differ?
+- What is the `--` end-of-options marker?
+- How do you validate user input?
+- How does `[[ value =~ regex ]]` work?
+- What quoting pitfalls exist with Bash regular expressions?
+- When is `grep -E` better than Bash regex?
+- How do grep, sed, and awk differ?
+- How do you use sed substitution safely?
+- How do you select an alternate sed delimiter?
+- How do you use awk for column processing?
+- Why is CSV not reliably parsed with `awk -F,`?
+- How do sort and uniq work together?
+- How do you compare software versions safely?
+- What is `getopts`?
+- How does `getopts` differ from external getopt?
+- How do you design `--help` output?
+- How do dry-run, verbose, and force flags work?
+- How do you implement logging levels?
+- Why should diagnostic output use stderr?
+- How do you add timestamps and a script name to logs?
+- How do you make color output safe for CI?
+- How do you detect whether stdout is a terminal?
+- How do you make a Bash script suitable for CI/CD?
+- How do you propagate failures in GitHub Actions or GitLab CI?
+- Why should CI scripts not depend on interactive shell setup?
+- What does idempotency mean for a script?
+- How do you make repeated provisioning safe?
+- How do lock files prevent concurrent runs?
+- What is `flock`, and what are its limitations?
+- How do you handle a stale lock after a crash?
+- How do you implement bounded retry with backoff?
+- Which failures should be retried and which should not?
+- How do you apply timeouts to external commands?
+- How does GNU `timeout` differ from macOS alternatives?
+- How do you diagnose a hung script?
+- Why can many short-lived processes make Bash slow?
+- How do you reduce calls to grep, sed, awk, and cut in loops?
+- When is one awk program better than several piped utilities?
+- How do you parallelize independent Bash work?
+- What are the risks of unlimited parallelism?
+- How do you cap worker concurrency?
+- How do you collect errors from parallel work?
+- How do you test Bash scripts?
+- What is ShellCheck, and which bugs does it find?
+- How do you run ShellCheck in CI?
+- What is Bats?
+- How do you mock external commands in shell tests?
+- How do you test temporary-file behavior?
+- How do you document a script contract?
+- How do you keep a Bash script portable between Linux and macOS?
+- How do GNU and BSD utilities differ?
+- Why does `sed -i` differ on macOS and Linux?
+- How do you avoid nonportable utility flags?
+- When should POSIX sh be chosen instead of Bash?
+- When should a growing Bash script be replaced with Python, Go, or Ansible?
+- How do you review a production Bash script?
+- Which Bash anti-patterns cause incidents most often?
+- Which Bash topics should a senior DevOps or platform engineer explain in an interview?
+- How do you keep command tracing useful without exposing credentials?
+- How do you define an explicit retry budget for an automation script?
+- How do you prevent a deploy script from running in the wrong environment?
+- How do you confirm a destructive target before changing it?
+- How do you make a script's cleanup safe if setup only partly succeeded?
+- How do you inspect a production script's process tree and open file descriptors?
+- How do you migrate a large shell codebase toward safer tooling incrementally?
+- How do you set SLOs and alerting for a critical scheduled script?
+- Which architecture trade-offs should be evaluated before choosing Bash for a new workflow?
+- How do you safely parse a configuration value containing whitespace and quotes?
+- How do you preserve a command's original exit code while running cleanup?
+- How do you capture stderr without losing it from the terminal when needed?
+- How do you test error handling for a missing or unreadable input file?
+- How do you ensure an optional command failure is visible in logs but not fatal?
+- How do you make a shell script safe when invoked from an arbitrary current directory?
+- How do you distinguish user errors from transient infrastructure failures?
+- How do you make an operation resumable after a network interruption?
+- How do you record enough state to resume without accidentally repeating a side effect?
+- How do you define a checkpoint for a long-running maintenance script?
+- How do you keep a script from continuing after a partially applied configuration change?
+- How do you coordinate a database migration command with an application deploy script?
+- How do you make a deployment command safe to run twice?
+- How do you prevent concurrent scripts from modifying the same resource?
+- How do you time-bound lock acquisition and report contention clearly?
+- How do you clean a lock only when it belongs to the current invocation?
+- How do you handle signals while a script is waiting for child processes?
+- How do you forward SIGTERM to a process group correctly?
+- How do you preserve temporary diagnostic artifacts only on failure?
+- How do you redact sensitive values from a verbose log?
+- How do you ensure an error message remains useful when a command is localized?
+- How do you use exit-code conventions consistently across several scripts?
+- How do you build a small shell API that callers can source safely?
+- How do you prevent sourced code from changing caller shell options unexpectedly?
+- How do you namespace library variables and functions in Bash?
+- How do you avoid command substitution stripping significant trailing newlines?
+- How do you process NUL-delimited input in Bash?
+- How do you avoid glob expansion when accepting a user-supplied pattern literally?
+- How do you distinguish a literal `*` from a wildcard request?
+- How do you validate a path is below an allowed root after resolving symlinks?
+- How do you avoid a time-of-check to time-of-use race around a file path?
+- How do you safely create a directory only when its ownership and permissions are expected?
+- How do you avoid leaking secrets through a process list?
+- How do you pass a secret to a subprocess with the smallest practical exposure?
+- How do you verify a downloaded artifact's checksum and signature?
+- How do you make a script fail closed if its dependency integrity check fails?
+- How do you collect a diagnostic bundle from a failed CI job?
+- How do you retain a machine-readable result in addition to human-readable logs?
+- How do you make output safe for both terminal users and JSON-consuming automation?
+- How do you detect an incompatible Bash feature before executing a script?
+- How do you provide a portable fallback for an unavailable GNU utility?
+- How do you test a script on both GNU/Linux and macOS in CI?
+- How do you compare directory trees without breaking on unusual filenames?
+- How do you batch external calls without exceeding argument-length limits?
+- How do you avoid a thundering herd when a scheduled script retries a remote API?
+- How do you add jitter to a backoff calculation?
+- How do you set a deadline for a whole workflow rather than one subcommand?
+- How do you decide that a shell workflow has become a product needing a typed language?
+- How does ShellCheck find quoting, word-splitting, and portability errors, and why should warnings be understood rather than disabled wholesale?
+- How does Bats-core organize Bash-script tests, and which environment, file-system, and network effects must be isolated?
+- When are `jq`, `yq`, and `curl` better than manual text parsing, and how do you safely handle missing fields and API errors?
+- How do you use GNU Parallel, xargs, find, and coreutils without creating races, whitespace-in-filename bugs, or uncontrolled load?
+- How do you choose between Bash, Python, and Go for an automation task that needs HTTP clients, data structures, testability, and portability?
+- How do you manage shell-tool dependencies in a CI/Docker image so a script does not rely on an accidental utility version on a machine?
+
+### 4.19 Dart
+- What is Dart, and what is it usually used for?
+- How is Dart related to Flutter?
+- Is Dart compiled or interpreted?
+- Which execution and compilation modes does Dart have?
+- How does Dart differ from JavaScript, Kotlin, and Swift?
+- When is Dart used outside Flutter development?
+- How do you install the Dart SDK and check its version?
+- How do you create and run a simple Dart project?
+- What is the pub package manager?
+- How does `dart pub` differ from `flutter pub`?
+- How is a typical Dart project organized?
+- What are `pubspec.yaml` and `pubspec.lock` for?
+- How do you add a dependency?
+- What are packages and libraries in Dart?
+- How do imports, exports, and parts differ?
+- How do `show`, `hide`, and import prefixes work?
+- How do comments and documentation comments work?
+- What are `var`, explicit types, and type inference?
+- What is `dynamic`, and why should it not be overused?
+- How does `dynamic` differ from `Object` and `Object?`?
+- How do `final` and `const` differ?
+- What does `late` mean?
+- When is `late` useful, and when does it hide an initialization bug?
+- What are Dart's basic types?
+- How do `int`, `double`, and `num` differ?
+- How do strings and interpolation work?
+- What is a raw string?
+- Why are Dart strings immutable?
+- How do booleans work in Dart?
+- Why does Dart not coerce arbitrary values to bool?
+- How does null safety work?
+- How do `String` and `String?` differ?
+- How do `?.`, `??`, `??=`, and `!` work?
+- Why can the non-null assertion operator fail at runtime?
+- How do arithmetic, logical, and bitwise operators work?
+- What are `is` and `is!`?
+- What is type promotion after an `is` check?
+- When does type promotion not apply?
+- How do `if`, conditional expressions, and switch work?
+- What are switch expressions?
+- What is pattern matching in Dart?
+- How do guards with `when` work in a case?
+- How do exhaustive switches improve correctness?
+- How do `for`, `while`, and `do-while` loops work?
+- What are collection-if and collection-for?
+- How do break, continue, and labels work?
+- How do you declare a function?
+- How do positional, optional, and named parameters differ?
+- What does `required` mean for a named parameter?
+- How do default parameter values work?
+- Why must a default value be compile-time constant?
+- What is arrow-function syntax?
+- When does arrow syntax hurt readability?
+- What are callbacks and first-class functions?
+- How do anonymous functions and closures work?
+- What is a typedef, and when is it useful?
+- What are classes and constructors?
+- What are named constructors?
+- What is a factory constructor?
+- How does a factory constructor differ from an ordinary constructor?
+- What is an initializer list?
+- Why are assertions used in constructors?
+- What are instance and static fields?
+- What are getters and setters?
+- How do computed properties work?
+- How is privacy expressed with a leading underscore?
+- Why is Dart privacy library-scoped?
+- How do `extends`, `implements`, and `with` differ?
+- What are abstract classes and interfaces?
+- Why does every Dart class define an interface?
+- What are mixins?
+- How can a mixin be restricted with `on`?
+- What are extension methods?
+- When is an extension better than a utility function?
+- What are extension types?
+- How do you implement a value object?
+- How do you override `==`, `hashCode`, and `toString`?
+- Why must equality and hashCode agree?
+- What are records?
+- How do positional and named records differ?
+- How does record destructuring work?
+- What are sealed classes?
+- How do sealed classes help exhaustive matching?
+- How do sealed, base, interface, and final classes differ?
+- What are enums and enhanced enums?
+- How do generic classes and functions work?
+- What are bounded type parameters?
+- What is covariance in Dart?
+- Why can covariance cause runtime checks?
+- How do List, Set, and Map differ?
+- How do const and final collections differ?
+- How does Iterable differ from List?
+- How do `map`, `where`, `fold`, `reduce`, `any`, and `every` work?
+- How does `fold` differ from `reduce`?
+- Why does lazy Iterable evaluation matter?
+- How do spread and null-aware spread work?
+- How do you copy a collection without unwanted mutation?
+- What are exceptions in Dart?
+- How do `throw`, `rethrow`, and Error differ?
+- How do `try`, `catch`, `on`, and `finally` work?
+- What is StackTrace used for?
+- When should custom exception types be created?
+- What are synchronous execution and the event loop?
+- How do microtask and event queues differ?
+- What is a Future?
+- How does Future differ from a JavaScript Promise?
+- How do `then`, `catchError`, and `whenComplete` work?
+- Why are async and await usually clearer?
+- What does an async function return?
+- How are async errors handled?
+- What happens when await is forgotten?
+- How does `Future.wait` work?
+- When does Future.wait need partial-failure handling?
+- How do you add a timeout to a Future?
+- What is a Stream?
+- How does Stream differ from Future?
+- What are single-subscription and broadcast streams?
+- How do you subscribe and cancel a StreamSubscription?
+- How do async generators, `async*`, and `yield` work?
+- How does `yield*` differ from yield?
+- How do stream errors work?
+- How do map, where, and asyncMap transform a stream?
+- What is an isolate?
+- How does an isolate differ from a shared-memory thread?
+- Why do isolates not share mutable memory?
+- How do isolates exchange messages?
+- When should `Isolate.run` be used?
+- Which tasks need an isolate rather than async/await?
+- What is dart:ffi?
+- How does Dart call native C libraries?
+- Which ABI and memory risks exist in FFI?
+- What are AOT and JIT compilation?
+- How does JIT enable Flutter hot reload?
+- How does hot reload differ from hot restart?
+- What is tree shaking?
+- How do imports and dependencies affect application size?
+- How do Dart DevTools help profile an application?
+- How do you investigate a memory leak?
+- How do CPU and allocation profiles work?
+- How does Dart garbage collection work?
+- Why do many short-lived objects affect performance?
+- How do you avoid allocations in hot code?
+- What are const constructors and canonicalized const objects?
+- When do const objects reduce runtime work?
+- How do you organize layers in a Dart or Flutter application?
+- How do domain models differ from DTOs?
+- How do you serialize JSON in Dart?
+- Why is manual JSON parsing fragile?
+- How do json_serializable and code generation work?
+- How do you validate API input data?
+- How do you model network and domain errors?
+- How do retry and backoff work for a network client?
+- How should tokens and secrets be stored in a Flutter app?
+- Why can a mobile client not keep a backend secret safely?
+- How do package:test unit tests work?
+- How do unit, widget, and integration tests differ?
+- How do you mock HTTP and time in Dart tests?
+- What is dependency injection in a Dart application?
+- Why should singleton overuse be avoided?
+- How do version constraints work in pub?
+- What is a caret version constraint?
+- How do you update dependencies safely?
+- How do you check dependency vulnerabilities and licenses?
+- How do you publish a public Dart package?
+- What should a package's documentation and examples contain?
+- How do you preserve backward compatibility in a public API?
+- What are Flutter widgets and the widget tree?
+- How do StatelessWidget and StatefulWidget differ?
+- What are BuildContext and inherited widgets?
+- What are keys, and why do they affect widget identity?
+- How do state, rebuilds, and rendering differ?
+- What are `setState`, ChangeNotifier, BLoC, Riverpod, and Provider?
+- How do you choose a state-management approach?
+- How do you prevent unnecessary widget rebuilds?
+- How do you profile jank and dropped frames?
+- How do animations and the frame budget work?
+- What are platform channels?
+- How does Flutter call Android or iOS platform code?
+- How do you manage permissions and platform differences?
+- What are navigation, deep links, and route restoration?
+- How do you support offline data and synchronization?
+- How do you handle an app lifecycle transition to background?
+- How do push notifications and background work affect architecture?
+- How do you design a backward-compatible mobile API?
+- How do you coordinate an API migration with old app versions?
+- How do you implement feature flags safely?
+- How do structured logs, metrics, and crash reports help a Dart application?
+- How do you investigate a production crash in Flutter?
+- How do you protect a mobile API client from retry storms?
+- How do you enforce a timeout and cancellation policy for user requests?
+- How do you make an offline action queue idempotent?
+- How do you test a platform channel boundary?
+- What are common Dart and Flutter production anti-patterns?
+- When is Dart or Flutter not the right technology choice?
+- Which Dart topics should a senior Flutter or platform engineer explain in an interview?
+- How do you prevent stale asynchronous data from replacing newer screen state?
+- How do you enforce an error taxonomy across a large Flutter application?
+- How do you limit memory use while decoding an unusually large response?
+- How do you evaluate a Dart package's compatibility and maintenance risk?
+- Which architecture trade-offs should be reviewed before adopting Dart at scale?
+- How do you choose an immutable state model for a complex Flutter feature?
+- How do you prevent two screens from issuing duplicate requests for the same resource?
+- How do you deduplicate an in-flight Future safely?
+- How do you define cache freshness and invalidation for offline content?
+- How do you reconcile an optimistic UI update after the server rejects it?
+- How do you serialize an offline command queue across application restarts?
+- How do you prevent a background isolate from retaining a large object graph?
+- How do you choose a message format between isolates?
+- How do you investigate isolate startup cost on a low-end device?
+- How do you handle a stream that emits faster than its consumer can render?
+- How do you ensure a stream subscription is cancelled at the correct lifecycle boundary?
+- How do you turn a callback API with multiple events into a well-behaved Stream?
+- How do you distinguish an expected API error from a programming error in Dart?
+- How do you make error reporting useful without collecting sensitive user content?
+- How do you version a Dart package's serialized public model?
+- How do you prevent a generated JSON model from silently accepting an incompatible API payload?
+- How do you organize integration tests that require a real backend without making CI flaky?
+- How do you test retry behavior without waiting for real timeouts?
+- How do you set rendering and startup performance budgets in Flutter?
+- How do you identify an unnecessary build caused by an inherited dependency?
+- How do you choose a key for a reorderable, server-backed widget list?
+- How do you migrate a legacy `setState` feature to a structured state-management solution?
+- How do you keep plugin calls from blocking the UI isolate?
+- How do you manage platform-plugin version differences across Android and iOS?
+- How do you roll out a Flutter feature with a remote kill switch?
+- How do you investigate a crash that occurs only on one platform architecture?
+- How do you decide whether a shared Dart package should expose Flutter dependencies?
+- How do you choose between Provider, Riverpod, and BLoC for Flutter state management, and what are the trade-offs of global state?
+- How does Dio differ from `package:http`, and how do you build an HTTP layer with interceptors, token refresh, timeouts, and request cancellation?
+- How does go_router help with navigation and deep links, and which complexities arise from nested navigators and state restoration?
+- When are Freezed and json_serializable justified for models, and which risks come from excessive code generation?
+- How do you choose Drift, Isar, or a SQLite wrapper for local data, and how do you design schema migrations in a mobile application?
+- How do you use flutter_test, integration_test, and golden tests so UI tests stay fast and stable?
+
+### 4.20 General Questions About Programming Languages and Technology Choice
 - What does a “good programming language” mean to you?
 - Which programming languages do you know, and which have you worked with in practice?
 - Which language are you most comfortable writing in, and why?
@@ -13397,10 +15871,6 @@
 - If you had to choose a primary backend language for a new company today, what would you compare first?
 - If you had to choose a language today for a first-job fullstack developer, which options would you consider and why?
 - What questions about the language and stack would you ask the company yourself in an interview?
-
-
----
-
 
 ## 5. Frontend
 

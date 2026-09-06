@@ -294,6 +294,7 @@ func safePathPart(value string) string {
 	value = strings.TrimSpace(value)
 	value = strings.ReplaceAll(value, "/", "-")
 	value = strings.ReplaceAll(value, "\\", "-")
+	value = strings.ReplaceAll(value, ":", "-")
 	return value
 }
 
